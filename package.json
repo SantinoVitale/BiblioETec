@@ -1,0 +1,19 @@
+{
+  "name": "biblioetec",
+  "version": "1.0.0",
+  "description": "Proyecto para la profe de lengua",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantinoVitale/BiblioETec.git"
+  },
+  "author": "Santino Vitale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantinoVitale/BiblioETec/issues"
+  },
+  "homepage": "https://github.com/SantinoVitale/BiblioETec#readme"
+}
