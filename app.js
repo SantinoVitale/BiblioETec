@@ -12,6 +12,7 @@ const port = config.port
 // * CONEXIÓN A MONGO
 connectMongo();
 
+
 app.listen(port, () => {
   console.log("Server escuchando en el puerto ", port)
 })
