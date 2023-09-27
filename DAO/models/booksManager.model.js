@@ -6,11 +6,17 @@ const booksManagerSchema = new mongoose.Schema({
   title: String,
   retiredDate: Date,
   expireDate: Date,
-  owner: {
+  books: {
     required: true,
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Users"
-  }
+    ref: "books"
+  },
+  owner: String
+  /*owner: {
+    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users"
+  }*/
 })
 
 export const booksManagerModel = mongoose.model(bookManagerCollection, booksManagerSchema)

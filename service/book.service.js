@@ -2,7 +2,7 @@ import { bookModel } from "../DAO/models/book.model.js"
 
 class BookService{
   async get(){
-    const books = await bookModel.find()
+    const books = await bookModel.find();
     return books
   }
 
