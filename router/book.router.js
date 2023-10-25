@@ -9,3 +9,4 @@ bookRouter.get("/:bid", bookController.getById);
 bookRouter.post("/", bookController.post);
 bookRouter.put("/:bid", bookController.put);
 bookRouter.delete("/:bid", bookController.delete);
+bookRouter.post("/many", bookController.postMany)

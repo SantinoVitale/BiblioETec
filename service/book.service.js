@@ -16,6 +16,11 @@ class BookService{
     return postBook
   }
 
+  async postMany(data){
+    const postBook = await bookModel.insertMany(data)
+    return postBook
+  }
+
   async put(bid, info){
     const { title, description, img} = info
     const putBook = await bookModel.updateOne({_id: bid}, {title: title, description: description, img: img})

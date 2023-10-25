@@ -56,6 +56,21 @@ class BookController {
     })
   }
 
+  async postMany(req, res) {
+    const postBook = await bookService.postMany(req.body)
+    console.log(req.body);
+    if(!postBook) return res.status(400).json({
+      status: "error",
+      message: "No se pudo subir el libro",
+      payload: {}
+    })
+    return res.status(200).json({
+      status: "success",
+      message: "Se subio el libro correctamente",
+      payload: {postBook}
+    })
+  }
+
   async put(req, res) {
     const {bid} = req.params
     const putBook = await bookService.put(bid, req.body)

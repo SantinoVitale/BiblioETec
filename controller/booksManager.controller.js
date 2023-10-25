@@ -61,7 +61,7 @@ class BooksManagerController{
   async delete(req, res){
     const {bid} = req.params
     const deleteBookCard = await booksManagerService.delete(bid)
-    if (!deleteBookCard) return res.status(400).json({
+    if (deleteBookCard.deletedCount===0) return res.status(400).json({
       status: "error",
       message: "No se ha podido borrar la carta del libro correctamente",
       payload: {}

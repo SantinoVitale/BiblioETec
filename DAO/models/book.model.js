@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 const bookCollection = "books"
 
 const bookSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  img: String
+  title: {type: String, required: true},
+  author: {type: String, required: true},
+  category: {type: String, required: true},
+  img: {type: String, required: false},
 })
 
 

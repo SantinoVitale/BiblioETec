@@ -23,7 +23,7 @@ class BooksManagerService{
   }
 
   async delete(bid){
-    const deleteBookCard = await booksManagerModel.deleteOne({_id: bid})
+    const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid)
     return deleteBookCard
   }
 }
