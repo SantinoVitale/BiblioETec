@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const bookManagerCollection = "booksManager"
 
 const booksManagerSchema = new mongoose.Schema({
-  title: String,
-  retiredDate: Date,
-  expireDate: Date,
+  title: {type: String, required: true},
+  retiredDate: {type: Date, required: true},
+  expireDate: {type: Date, required: true},
   books: {
     required: true,
     type: mongoose.Schema.Types.ObjectId,
     ref: "books"
   },
-  owner: String
+  owner: {type: String, required: true}
   /*owner: {
     required: true,
     type: mongoose.Schema.Types.ObjectId,

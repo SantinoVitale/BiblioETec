@@ -4,6 +4,8 @@ import { connectMongo } from "./utils/mongoose.js";
 import { bookRouter } from "./router/book.router.js";
 import { booksManagerRouter } from "./router/booksManager.router.js";
 import cors from "cors";
+import { defaultlogger } from "./utils/log4js.js";
+
 
 // * CONFIGURACION EXPRESS
 const app = express();
@@ -22,5 +24,5 @@ app.use("/api/booksManager", booksManagerRouter);
 
 
 app.listen(port, () => {
-  console.log("Server escuchando en el puerto ", port)
+  defaultlogger.debug("Server escuchando en el puerto ", port)
 })

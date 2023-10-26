@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import config from "../config/dotenv.config.js";
+import { databaseLogger } from './log4js.js';
 
 const mongoURL = config.mongourl;
 
@@ -7,8 +8,8 @@ export async function connectMongo() {
   try {
     mongoose.set("strictQuery", false);
     await mongoose.connect(mongoURL);
-    console.log("¡Conectado pa!");
+    databaseLogger.debug("¡Conectado pa!");
   } catch (error) {
-    console.log(error);
+    databaseLogger.error(error);
   }
 }

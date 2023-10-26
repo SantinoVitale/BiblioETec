@@ -1,0 +1,1179 @@
+[2023-10-25T22:03:13.484] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:03:14.294] [DEBUG] MONGO - ¡Conectado pa!
+[2023-10-25T22:13:58.822] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:14:00.005] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:14:00.652] [DEBUG] MONGO - ¡Conectado pa!
+[2023-10-25T22:15:57.212] [INFO] BOOKMANAGER - Se trajeron todas las tarjetas de los libros. CardBooks: {
+  _id: new ObjectId("6538569f668f12029ffa2c7b"),
+  title: 'Prueba',
+  retiredDate: 2023-10-24T23:43:27.000Z,
+  expireDate: 2023-10-31T23:43:27.000Z,
+  books: {
+    _id: new ObjectId("653852f516c7fa312877f341"),
+    title: 'Los Gatos Guerreros - Los cuatro Clanes-',
+    author: 'Erin Hunter',
+    category: 'Diccionario Grande',
+    img: 'https://lh3.googleusercontent.com/pw/ADCreHfwRt3vt_cMIZ7sPflogTclk7TgtnDy5FIHRqsuoNNWQiPhBfSHAXOyDbvx2gclQ8JZHckkxWkPiUIC--1R0O4fgsnWrpbMolmRhkaAMgSgFU0v414kKxPUfAsB9S59SBl0aFHLq9PJmtTGS3l7oMAy=w1252-h939-s-no?authuser=0',
+    __v: 0
+  },
+  owner: 'Usuario Prueba',
+  __v: 0
+},{
+  _id: new ObjectId("653859cc668f12029ffa2cd5"),
+  title: 'Prueba 2',
+  retiredDate: 2023-10-24T23:57:00.000Z,
+  expireDate: 2023-10-31T23:57:00.000Z,
+  books: {
+    _id: new ObjectId("653852f516c7fa312877f347"),
+    title: 'Palabras escritas para vos',
+    author: 'Desconocido',
+    category: 'Texto literario',
+    img: 'https://lh3.googleusercontent.com/pw/ADCreHdROro_A05vDlryj_bCSZLm6I9ROEOz5gC2Myy84_lP9qkYejQStTkwsr9ACEzMY-xZ8rebGniMLzJD7H_ynechYdliZ4ZN70BLEpb4-0fhHGAwJCJIhW2PjvKspy5b1xAw_aS8I8MRqrP3Xtnrj7MX=w704-h939-s-no?authuser=0',
+    __v: 0
+  },
+  owner: 'Usuario Prueba',
+  __v: 0
+}
+[2023-10-25T22:15:57.788] [INFO] BOOKMANAGER - Se trajeron todas las tarjetas de los libros. CardBooks: {
+  _id: new ObjectId("6538569f668f12029ffa2c7b"),
+  title: 'Prueba',
+  retiredDate: 2023-10-24T23:43:27.000Z,
+  expireDate: 2023-10-31T23:43:27.000Z,
+  books: {
+    _id: new ObjectId("653852f516c7fa312877f341"),
+    title: 'Los Gatos Guerreros - Los cuatro Clanes-',
+    author: 'Erin Hunter',
+    category: 'Diccionario Grande',
+    img: 'https://lh3.googleusercontent.com/pw/ADCreHfwRt3vt_cMIZ7sPflogTclk7TgtnDy5FIHRqsuoNNWQiPhBfSHAXOyDbvx2gclQ8JZHckkxWkPiUIC--1R0O4fgsnWrpbMolmRhkaAMgSgFU0v414kKxPUfAsB9S59SBl0aFHLq9PJmtTGS3l7oMAy=w1252-h939-s-no?authuser=0',
+    __v: 0
+  },
+  owner: 'Usuario Prueba',
+  __v: 0
+},{
+  _id: new ObjectId("653859cc668f12029ffa2cd5"),
+  title: 'Prueba 2',
+  retiredDate: 2023-10-24T23:57:00.000Z,
+  expireDate: 2023-10-31T23:57:00.000Z,
+  books: {
+    _id: new ObjectId("653852f516c7fa312877f347"),
+    title: 'Palabras escritas para vos',
+    author: 'Desconocido',
+    category: 'Texto literario',
+    img: 'https://lh3.googleusercontent.com/pw/ADCreHdROro_A05vDlryj_bCSZLm6I9ROEOz5gC2Myy84_lP9qkYejQStTkwsr9ACEzMY-xZ8rebGniMLzJD7H_ynechYdliZ4ZN70BLEpb4-0fhHGAwJCJIhW2PjvKspy5b1xAw_aS8I8MRqrP3Xtnrj7MX=w704-h939-s-no?authuser=0',
+    __v: 0
+  },
+  owner: 'Usuario Prueba',
+  __v: 0
+}
+[2023-10-25T22:16:32.208] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:16:32.991] [DEBUG] MONGO - ¡Conectado pa!
+[2023-10-25T22:16:45.244] [INFO] BOOKMANAGER - Se borró el bookCard con el ID 653859cc668f12029ffa2cd5 correctamente
+[2023-10-25T22:16:45.362] [INFO] BOOKMANAGER - Se trajeron todas las tarjetas de los libros. CardBooks: {
+  _id: new ObjectId("6538569f668f12029ffa2c7b"),
+  title: 'Prueba',
+  retiredDate: 2023-10-24T23:43:27.000Z,
+  expireDate: 2023-10-31T23:43:27.000Z,
+  books: {
+    _id: new ObjectId("653852f516c7fa312877f341"),
+    title: 'Los Gatos Guerreros - Los cuatro Clanes-',
+    author: 'Erin Hunter',
+    category: 'Diccionario Grande',
+    img: 'https://lh3.googleusercontent.com/pw/ADCreHfwRt3vt_cMIZ7sPflogTclk7TgtnDy5FIHRqsuoNNWQiPhBfSHAXOyDbvx2gclQ8JZHckkxWkPiUIC--1R0O4fgsnWrpbMolmRhkaAMgSgFU0v414kKxPUfAsB9S59SBl0aFHLq9PJmtTGS3l7oMAy=w1252-h939-s-no?authuser=0',
+    __v: 0
+  },
+  owner: 'Usuario Prueba',
+  __v: 0
+}
+[2023-10-25T22:17:05.945] [INFO] BOOKMANAGER - Se borró el bookCard con el ID 6538569f668f12029ffa2c7b correctamente
+[2023-10-25T22:17:05.999] [INFO] BOOKMANAGER - Se trajeron todas las tarjetas de los libros. CardBooks: 
+[2023-10-25T22:17:40.297] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:17:41.146] [DEBUG] MONGO - ¡Conectado pa!
+[2023-10-25T22:17:47.991] [INFO] BOOKMANAGER - Se trajeron todas las tarjetas de los libros. cantidad de CardBooks: 0
+[2023-10-25T22:17:48.046] [INFO] BOOKMANAGER - Se trajeron todas las tarjetas de los libros. cantidad de CardBooks: 0
+[2023-10-25T22:18:07.421] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:18:08.039] [DEBUG] MONGO - ¡Conectado pa!
+[2023-10-25T22:18:09.130] [INFO] BOOK - Se trajeron todos los libros. Libros: {
+  _id: new ObjectId("653852f516c7fa312877f33f"),
+  title: ' El principito',
+  author: 'Antone de saint',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHctlbIg25PhOStyQzj1sG1dcO24RyYqya1Iv79Bc2FjJQWg-W62xyfl54eqXNyKdwEviU7an3EQ_koAnlOLyvx3DMoplUmM0b6hHXT2TL4tCXHi16ThTMeioCvwtaKVhTJB8QtzS5wvt56ELQ0v6oup=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f340"),
+  title: 'La independencia de  argentina y america',
+  author: 'Felix Luna',
+  category: 'Diccionario chico',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfIIwafqlMtmNOF4rnGlBe5221J4xhjyazt1U5T8RJQ8wtIQzNEpzB6_atCSQxUy5gZYNAbrpxmhfQ6g4cgX1ln9LbRUXmmBj1CN6a5dyqbXWcRFg_4abnMJhgq18wZ7euvCNCeVjMANKZDylMs2cib=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f341"),
+  title: 'Los Gatos Guerreros - Los cuatro Clanes-',
+  author: 'Erin Hunter',
+  category: 'Diccionario Grande',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfwRt3vt_cMIZ7sPflogTclk7TgtnDy5FIHRqsuoNNWQiPhBfSHAXOyDbvx2gclQ8JZHckkxWkPiUIC--1R0O4fgsnWrpbMolmRhkaAMgSgFU0v414kKxPUfAsB9S59SBl0aFHLq9PJmtTGS3l7oMAy=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f342"),
+  title: 'Maitena',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvOWwpBy_f41zl-c3Ci4UHGK8PpCGiS1374hvNyvpQZDnyi6cQx_VpoP2LGguW2dsddc1B3pYF91BAjM28UpAdI84D5GKer8Xxem-_eJvyKmrLKOeKuq8_xqy0gH_kXhX6Tdn0_pKcf8zdpBUhjFs4=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f343"),
+  title: ' Azabache',
+  author: 'Anna Sewell',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd2chvOzgQ3SWVQIp08Ii7beWYZAX6yMWNz01zRvsruaBp_C_R_bbWBTjzWVWD6uOjIwofz57cw5OBXqLVID_YXL8PT-CUj7WjboxkB6gsZKmi0UGdnI2TmsqqX4z6RPa3YllGyIJUjK7J34BSCBVpm=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f344"),
+  title: ' Horneritos',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHf-jaXglzHoHhUsX5tvaebpjySkzOA0rqgEacbTk6oxnGuHMylXXMnD9eGLMwA-zXhSAvdvkNBSTKRWxEZfnfTBPSeC5n4cYUHglOCjdDPEeQo6t2zs6ISONGmtXAoipDcBQIoVlwbz8nRvgoMeFTwz=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f345"),
+  title: 'El circulo de la suerte',
+  author: 'Andrea Ferrari',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfugVbtxkRQTEzOCanOzvzYAcbgPN8CUKVpRvHOTKCJB9BQd4a4OPi0Z6ZCGFvVGA0JQtDcP8DKz1HinVxVf_4qN0BazQ7ZQIvy36Sq4y25Yg7xgMIs54rH-eECPLrZ4V0xOlSIeuOSAtuL1nkrFM7y=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f346"),
+  title: 'Cuentos para seguir creciendo',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHctv39vsZKhNbETj8yyEiHH-2tNyJti0YQJISRA6FSAx7Mz5ufr2p8GCueooe4pqCeyzzPwfqpatsLhwNG_5FGroLGZjbEWq-E5P6STtZ9_CgU0q1mpqWYO7pkcbloX4RxO1SXWUOmaNeOPsNlbJIHu=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f347"),
+  title: 'Palabras escritas para vos',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdROro_A05vDlryj_bCSZLm6I9ROEOz5gC2Myy84_lP9qkYejQStTkwsr9ACEzMY-xZ8rebGniMLzJD7H_ynechYdliZ4ZN70BLEpb4-0fhHGAwJCJIhW2PjvKspy5b1xAw_aS8I8MRqrP3Xtnrj7MX=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f348"),
+  title: 'La casona de los experimentos',
+  author: 'Mario Mendez',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHerwVj4wpNNw9iN35xeR_lu-Ydw9OKkzXyxrOVQbY7cM7VkNNO0a-kuBWiBDBZqr4S8g9cP6FSD4ctqiOuV2MmMphs1iWfzYDZcxdbXb2Z43zBOHoHSl3i7tZboTMiG5dARs1q4VPmfOZjF5hp1zxQq=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f349"),
+  title: 'Isla Blanca',
+  author: 'Alfons Samper',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdwGmEVyHn-iUI28l7cfplcbOEnxH8dPx_DMHBpNyUQOrGhdUOk6fk12AffdnNgZtEMfGwb2oetbumOppGtDk8hhNB4j4YLasFcqTv6tI5HjQQlZRYZlzsf6xs8qIQiLS4QB27Hp3LxOMQ8p71yk-P8=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34a"),
+  title: 'Prosa y poesia escolar',
+  author: 'Gabriel Mistral',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdlNVU-BTFQ9QqAYe4dnZs8CSeEt8Rsq5CWJ-5xuXI9gyDhJowaJH76zT28_7ldvsbvVK-0vP_fGrYoLdJF9pXJTKpauIZJNCuZmYpPzJ4EgG_bzBHzNv6POgoRCz2pN2VHJ5G3w_na6zzmvwjSaSvG=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34b"),
+  title: 'Historia sobre un corazon roto y talvez un par de colmillos',
+  author: 'M.B.BROZON',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd0JvqLzymwheWIdqKmuE7U9DLNyW22r7PhcTjZ1MnBS8MtywMc7z1psChuRAyLK4xfGKdHVYT1eomo7zF1hnWqWz9UBFjKpQnbTgGUPbGbqW12UT1RbUBU2wumcXt8_Pu-1duaROCaaIlatOyAGIMS=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34c"),
+  title: 'No me digas Bond',
+  author: 'Andre Ferrari',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdmeImQ1eJRIqvadYtu5MGWYaHMWIgBZl0mQSTc7E2gYXamPu2jm079kIvKSLglVD38juvv_j_KXsPWP9Qj26GWwsvbZ5vv0rkvARVQ9ffX_sd_YOljEOiCAc3_QYbe1gNnCWTu-lH62ZoKVEdkuoin=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34d"),
+  title: 'Nadie te creeria',
+  author: 'Luis Pescetti',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdYz8iWReN6z21SqPtbpQYEaJM4VGIZtxGMmcOau2Z-_XXWgqaqHP57e4CVKNFqwOUxgw0QhNRRYSUIjYDajWOhLV95uyLLad8UCJel8cPrPJuIDYvX_Iu3Q_d1kH7t99-YTEkxHedKgOgdbuYIQjsA=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34e"),
+  title: 'Las aventuras del Sapo Ruperto',
+  author: 'Roy Becorcay',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHceKljMoaH92AWMl6Ig3IoaonN8YrljSLBZ6MB0ZHPEAau-caxAhA8_C5sG7zXDYvNbXxwP63XlUbTn4cOmmN0IaVgopaTapKA9vSrXaN0YlUQM4dH_Q1UIFJBkOzWUxe4Hlr8ibnnbsEhov2XSDeat=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34f"),
+  title: 'Las mil y una noches en 10 cuentos',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd2BbctG0jPqNj_9T1hBwPHUM07DGDCMSL5-0cK4lmdeB27h5S0fl-ZCsKkfoNfg_iuia49Px81BsB5Af0qr_ixiMEtP_yj7eKfUP7ed8eUFQqeda8OtqDgEp0Pilt0YVHcDIfs5bD925AMqv8eFVjU=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f350"),
+  title: 'Lucila y Joan',
+  author: 'Griselda Galmez',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHc-d3KnqDEjOFPUlVx3AtbX2XlSssw9MZNZwtcpEMm9ZmqbZ1edWpzPX231MkShq_AFflirRLPpY1ixWJ1kfkh1PW2bSz4uYw-MWIErxxyiTaDpIXAdnjEgOZtaJL7nxODpVzU1iIJvJlWW_rRIB80g=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f351"),
+  title: 'Vampiricas Vacaciones y otros cuentos de risa',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcD_eZO-KUzkajaM4iJSUqxWK5Eo5eDdwiaFhPWbuBaicXcZlhDipixwQIUqOI-9IprRUw-gH2UYnuzaMgMucjzj8BkCWHwDpyqLERDTa0T6ih8Ztz0wzu4AU4mSSmVFEuKJ-cqRDAzHY3XoekB5NGt=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f352"),
+  title: 'El caso del inventor de pesadillas',
+  author: 'Miguel S. Soler',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdnRHSWjfGIqoRUZdIcBsHXahe65meakIxLbGlGbGViF7wSkFmyu9tLYSUeYzjAWgEQ_3iah0_vbSJnowPDfr7uK0F_D9twsCZ5CeAhMeGEd1LDKlzVuuoclnptOsjamfXyU5hasHss_0F1dxsB2F0Y=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f353"),
+  title: 'Cuentos de aventura para vivir una y mil historias',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfqBuZDFj3ltX9OQxxvCwgIH3Yt-2V3rLYPJ82X85L4UXEiMZO9j8GU_YOF0t5tXivtLTDWzkXK1jmWsZt-SnCi9_WNBafDwZ8AEcHawi3mZLIiczg3PttGWlVqvEfzvuot-YK6busad9lei1AIyu7s=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f354"),
+  title: 'El espejo roto',
+  author: 'Agatha Christie',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeUOlS0cCoI-AATU0siSa4QsXoqlmfJHVutmdhENzzFHeXnfFZBr0c290FwWxWOX6vusHMrINpAMzocY7PxcTaR8m9q00BwtTUoS6tZilv0HT5jhuzniR-5f1GMNF8BpLayeC6_dnSkJo8Jd049n-_O=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f355"),
+  title: 'Cuento con Angeles',
+  author: 'Carlos Joaquin Duran',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHewNlFHfmaRoat-8Ki0pTdDGCjXVA-AdTLp37DORH818vifMhiFATXbjGSCMVf3Y9nkizqSolrxIf-lkpK1FZHlTaFRPTcoSWv1vXHQg3B-g_INN9fN977jhlWJnEzSQTvDTJEwxKF7PIR4G0QTYwCY=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f356"),
+  title: 'Recuerdos para merceditas',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfZphBIzjyAwlxPzBDsuhhpweqw2MHou88EKLRki5aj7unrkAmRukicIz06YHJC1kaKAwts2PC6yPH6KovHVW54I_eXP9XADKb7d2WbwI01K_rLBtY4sn4AjACTID8L_dY0c5JmAnRzP9S5YJ8HJEVX=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f357"),
+  title: 'FantasVille',
+  author: 'Christopher Pike',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfZHmGE79d1aVAnKgUbFGejQd9WZ_MkrEBFMbUdnUS2WlooqXTPqsEGxVkXvTnxJewONzKVxMzcCFxTVJHIJhUrbjJpWGg_I4HQv0ADtP9uw3TeIdWRdGfdd6HiHx9PF51dLBIaiEVdIG9-w99oZgNP=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f358"),
+  title: '¿Quien se anima a bajar al sotano?',
+  author: 'Juan Pedro Mc Loughlin',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdH3Ap1dZiP1Lvq_rR7GRQGwLKz367I6MDEdnuuqwMbVv2xATgfnSVjgJLW3iTq5_SYMlo66dCBS9GbA6TsvvwZ3szMbadGbDLJCimsU2bsxo3kxVAbagQ-tctJK2Blz3quWcPAtDSkgSd7uUBgRu54=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f359"),
+  title: 'Tambien las estatuas tienen miedo',
+  author: 'Andrea Ferrari',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvDUAjdDZNucCQSA0PvJC4ejIdcO7rgcyUvKzx1zWVV21-2tO6TxlYaAVejBIBK2NAf79HJTJJVniapS5lFItoW68fPzXJxOPZQekuRo57L9HathOsCJnThQfpJQF4kkaBLrH5ioMM_ioz6nYx94Vl=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35a"),
+  title: 'El Mago de Oz ',
+  author: 'Lyman Frank Baum',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvX6P9sTUgJ4cihO9oLfijR-4gq9kNmDJZEB6sY6ZzQtgY554ENCBruqFexYUHO8XCOD9Uzjsp7PoeDPye76KPzqDpnAVTnXmHzuhSrzGN21GZTDR2VTCUg3aSlTc-2A8cJ3o2EfXJbkeWNRJAv87J=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35b"),
+  title: 'Lucas',
+  author: 'Francine Ruel',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdPxDfnuuPhe5Uu90UuZayxpAFw8XeOXihhln4RtcMGVLXDnF5Ugt3LHKKIxmbv_pUS-sQbda1F07hCRigSDI0bMiWTSettUFxUPusCt1kRSC2EWOHTBPFoQmCFfWmvK7N7fXuOH78udmhNiQ74PHGL=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35c"),
+  title: 'Alicia en el pais de las maravillas',
+  author: 'Lewis Carrol',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcOH0lHFv-ldwwUAiwdD5Mm3NqS-u_QLaRmZz68KWQu-ksLIKDjUSe_B7tmN0nO_Lf_tvAOgnGKYp3pWFPA9Ys50PX4wOAzv6eKOrX0WGoDh0qWXiUNhGFR2A3hctKm5DFtntAqBmWdDhrw2PmQrP0I=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35d"),
+  title: 'Cuentos populares de picaros y necios',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeR6xvCCZ-23P7v0cUcrfQ8yQRc-9mvzgcYsbeF35Ld5LWT2Xq5y_1PyHnT5hQDKAjrwd-aCVkT3bfwiwGKCj-6NX9qMZMoxfnlmSYNf4LF2Vobd6r5WEW8wDyZ-49SC1EGiHUXU0ATNQbeJ9u7qgnP=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35e"),
+  title: 'La puerta Abierta',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfSyi1wCVuvXCzV66pmrjWX1klPhPzj4kdj9-eFsCRd0brtdrWj9xMU7x-QqSerDT0wu8J7MnjYHT9ERJ-r4q-9mopGtARbJnFkBDeDvW0UxsWTytQfXgOGL746T9OGO2gDcNs7QEyNtHAAp-FIxnYs=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35f"),
+  title: 'Decimas',
+  author: 'Violeta Parra',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd39MMI6iUVRpLdQwuCP-5Qx9vn0aoAwkk4H15K2TPe7SkUw9Zq0DG2QX4RiR8MmSwQSBRcYjNl3C_HKch0IqPudKz2APeoMMIJWZFotNj-O9Pnv-BFYHqHTkAQVslMPVKjkns0iVVXMf6QizIBAjU5=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f360"),
+  title: 'Gaturro y el poder del prisma magico',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd4jm33K1Pay5dCk6lCS2VaBFUL4HP5dGnXGBR7XP2pZEDaCMa2w3ctep6VpMHcuUFTeQ0OVtIn9drKcOmV49Pa6CGzbGQ-UIKZQiF68gzv4YBw1x1ljCaLqY_bS33XCM8LTF_UtTRFuumhvL5an120=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f361"),
+  title: 'El Matadero y La Cautiva',
+  author: 'Esteban Echeverria',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHe_u71CURpbRtwV4mDyCaZQyyKXRDKhAHPE0EA9P3fGbodzypnMzM883_8Phgs0POxtR76JKEAS5bj5QgbPUcAKE-yEa0mAwa_yx-HAg9ZorO8fYEBrQICinV2wWA6whegzSiyMV6zllF9Qejp-iTH1=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f362"),
+  title: 'Jinetes de las olas',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHceC3LxqLT7Eq5EaQpEID8tFbm5izbD9C2aITCgYXTxkHvCbZvQ0qApIDzcbz59u817wIeeqnSG2f3cciAL7jUBNvfwzX6TkwpSaYpUV9g7FHa-lBlMskh4FG2njvktxP3xkKVY1ojFw1hmV5zP1rP5=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f363"),
+  title: 'La noche del meteorito',
+  author: 'Franco Vaccarini',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHejEV6HXATyXN-fc354Tjeo12dAd_pvtF7xzzsaGzZvBXDD60J_8j92bQaD2Cbng_wyCmi6eaffS4cAWulyMrRVOhq7gjzB4z3nBzt6Mggh5hK4lR9n0OeNYIoYDbiKOO4HL4IQwVyl75FNVFMscEAE=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f364"),
+  title: 'El extraño Caso del Dr.Jekyll Mr.Hyde',
+  author: 'Robert Louis Stevenson',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcmjz6we-mTH2R232sh4ebaSsaPyw9pmmUDR_WHq7KlV8LCvZX8qqq5Qz-3wP1WkOzQpW9PyEWQmRSrs9eIREbiJs75-hZORJblTAJapEJ9DH2g0w6J1GEemndINdTlFEZmkMu2rb07UrpVBBfB9S-w=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f365"),
+  title: 'Mi primera Biblia',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfKJl7fnheB-rrbbItlacUYQqLzrXQUgrmB5_7F9RwrTLIYn-veFzJ3pIcziU6yu-MCsvMuUzZCG0tZ-fzNnLoT-eruICOziZToc1ebVqN1OagshXTBB7FnRK0eBpWrXqTarvN-nTbJbe_6X0cvaCNV=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f366"),
+  title: 'Muerte en la Vicaria',
+  author: 'Agatha Christie',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdIdnesbBS5aPUyihfm2wdvq45ZG7Hu74n11kLexH25crN7ExzL4d3gmx52lpv5W0ZULHXn4BUP-xGCpRWXJzia1yFwlj3KALui-TjnGh0LTnN2397LvHDobyLhaDVLWGt6dw5mK5Yr92Hc5myli60P=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f367"),
+  title: 'El Retrato de Dorian Gray',
+  author: 'Oscar Wilde',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd2bnrU_Re4g7lOXKj-R7EVJcNX7w33QWdU2CAm4OEbBQDyWyeKaHGO_M3nCOMqsk1Js1XFbH10zuUU4Mw2Be16zDJWUTe7v5PbpRgZJdanSmcKcnKOtUNw2IdzyvG925PWo0XbGs4-REsbFMsLNLmS=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f368"),
+  title: 'Leyendas',
+  author: 'Gustavo A. Becquer',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvNWfwunWn-ZsMnoM8FS_QMD22FmQF5VWjZ0qwtSKqGBi7KNYgYhnW44XIgaFYARdZjAXggjikPO8e1RLlIXBGIOj6APkRkyS011YHxv-gXIyyb7oy1j6Hm0wuc2zgGVeHr8JtwxBohXgttD-OtW2u=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f369"),
+  title: 'El almacen de las palabras terribles',
+  author: 'Elia Barcel',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHe0W7ANLZMSaI1njwLIfw0Z0nZE4v0z94lZCuPgck5swJjT1Qkshmmx4uI3emn9fXSMNigswWQsH9Cnnag2isNiiW7Dcf-hdbPnU6wNEcuUrU28prwRaklLnRoOkp8F6rc7j-o6Y_yXsVaO0ChixvuX=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36a"),
+  title: 'Los ojos del perro siberiano',
+  author: 'Antonio Santa Ana ',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfSOjemsGS0mHjB1XlGZJidfJ1AYAWHA00NveOv7kRBoWs9JY7kdfWecaNP4Zy-dv8RFoD7km57mUB4Nf_ldoVPK0X88E3ufpKGqy-veIv2iHOQJ1fE9h91NoHjASbqLH9ynfKOr3mndujdrV29iOaJ=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36b"),
+  title: 'Los arboles mueren de pie',
+  author: 'Alejandro Casona',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHexVlzgyvcGuqSMtVJZKtL6DbWYsTGM1sxJUdsiOXELYsRPsBlimMiiROLcfitDCO_A0uYF9e8lrZ-PkP2QwZ0Uen4OHDXUVrapAM5VhZXAKqyiJ8sIMmRzOQiVA15uNeWkyiOEF5giqRsDUMd_-pPo=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36c"),
+  title: 'Vidas Cruzadas',
+  author: 'Danielle Steel',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeoSB7grppLr_58IcNkFZJ9EqHoD50_YODELqzh0Q-RZDADWxY55VKvI5l27ZceMyZvaChpnZDVj5vyg0rEv7sx5tT0V-I39AuBN3dYBGH6-rK9VfMgckpXpIaE_2bb1oVndbOhC0Sw-oTalsmfiXYP=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36d"),
+  title: 'Una princesa en Berlin',
+  author: 'Arthur Solemssen',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfolC5S3Mr02__IVEEnwlQ-Ynm3tz72_o03853nV07VSLlP9Xvl7lxKr6LxXL2wZZ7quMKaBlr9RBgRTnQYTk7EcsXJU3NaQz_tcFwLm64vbBGWFniofkmPi2xN676-FrJKZJu7NJWw6s6TSIov2duA=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36e"),
+  title: 'Puerto Secreto',
+  author: 'Jack Higgins',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcy_NXre6jJf_C1qwykDk5viTEJWH9fbOOxC7cEi4ee8QArzMzlz7YlDKrtU8OOC77k6-lN_aeQUCVffB8ecnhIqm310WJyiPITLpTZZzpVoUpKKcqrTaUYml1itEuOBYmz3rTf-YajjSjBO_8E6C9M=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36f"),
+  title: 'Dias de Gracia',
+  author: 'Brenda Jagger',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcmmCI8k7GN1NuVXPDP_Wc86wVGnUAT_McjzoO1MFciLFy1QHtVh43tgZZnwpuj1on-R7IymLGXbOy26u0oPgCqEgkqmRkiGbHuphrYkBs3ARNJEhrp1nsbdLkP7joUyOJ5ZLyfdr42W9LBKjZXDplv=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f370"),
+  title: 'Un instante en el viento',
+  author: 'André Brink',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfGl5qyqNdccWXGQr9GubIYjS73OB_p0DNy-JMwcLpbU0N4_XoBagddG1NWfAiUnEQIzceBs6PaRKPIDdOh5FbAV6_Zd32WEig3WOHCb5tDRJFKcE0Oo9PSOquBISoBtmdviST_vxGuJ35_LWMUrtJ6=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f371"),
+  title: 'El Paso Milta',
+  author: 'Leon Uris',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHevF47ON32gg-kgXK941LeXk0AnC1lGD1naGWyz5YjsF6IM7TFO2tl_Bs9dfjJ3PiYYTOa2_Kf4TA09_K2KUtZEqJiimQquaMOp2_54UESqekQ0L54j5fAZud8jLBKdXB_1jmejzOsQZ8owLJtPuEOf=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f372"),
+  title: 'Breve Historia de los Argentinos',
+  author: 'Felix Luna',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfM6-QkVwAJ74vFgXlY_NLBB2y_tk7-xQBkKTn1kWq8t25puSBsoe5jMoyziSfMZ0UhoiT5xgGa-xFG1ZbrSB6xB8LfI2gH0GXR95xSbQPin4CGBYz8VBISAE0fkw2cfmNhaFF0ylkQHtZEUrDxktHV=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f373"),
+  title: 'Odisea',
+  author: 'Homero',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeP8yOrn5iqz8Eh549DsVxcDgLWQFoBROAFgDKmvvbgUW2Bc1E5M95GwRZ55unDU3Kjo3k-6oBarJs0mpP-Xq1rNe2WEoZ7Zp4ifGHw_kfbxGFeJQKNWf0EFyeq0NT-JNrEARbcc5298VytLQhLgsL0=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f374"),
+  title: 'Zona de Muerte',
+  author: 'Patricia Cornwell',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcpxRzCAZxubieya_FPUCNKaLbZVwslDfKG0J9lnd6z70k8gqegXuDVHFUvAj4UpJnogQv4JxlQWN8hbq1F3H4xQdEiwlJIgNOMWunrOL7_5uiqGbxJCj3OUj5Iw_mOqxpw5nJecjqSsEKnB8HR-DKL=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f375"),
+  title: 'Diez mujeres',
+  author: 'Marcela Serrano',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfrjFIaN3YN9hUr2zWJ33tBDksmoI0EyQGxhzmg50Hwpp5HtXTkA8LoNer-InpzbEmzbDiyrshiiSlBDe5TnpmaK5ybbS6DAfuUQke6ruZMK_WyrtsLkJAchC7YI3prxtuoQUsQ_3Up_JU-vpjwfX75=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f376"),
+  title: 'La Crisis de las ciudades',
+  author: 'Wolf von Eckardt',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeAdo9eeA_9LrTGeyzfpYohx3VOVn0__wLHRjEemhNppwblZHv3d1RM3Ly7zNz7_xQmeIFT1WX4B09GJsUczSr2cNMGjOhQY-7xyTbeIpeKSlauqQgQB3esLvQ_znvy6iv6NNWS64Vp9-UI-YEO43jf=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f377"),
+  title: "Dell'Amore Del Dolore Delle Donne",
+  author: 'Umberto Veronesi',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdNom95GfU3Wm2MNSFYVWzmEqF3ZepG33CBVstxor8LRCeLmuuY-vOdXcduDp86bJWkyLodg06X3Dg5sjGVKKlE_qtS-yIoj1Ia1UgB1UZieCI15n2ohDBjyj_9J9YUWUlQG6qshzGZ-KNbQyiKMCBG=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f378"),
+  title: 'Lo profundo del marcito',
+  author: 'Fabricio Marquez',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdVxo7BHaz7Pg8lGFs6xFtqyjX2hApFEoHe98nunFLZ38mcqc6mu8LiqEeParIheUFSvEf8EYxiI5XC7e_qFqSFonxxpnCaypSdftzcapwV6EJx3hh_wN0JmNYdtrUaXuLOSIwrqb_kUbctFsoqdi2u=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f379"),
+  title: 'Paula',
+  author: 'Isabel Allende',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdiYOmozI-6smQ72VDoO163hS9E5O82y36ZrcO2LvXCgrHogRd4sXraagGoTWc9RUwr9j271n6Q0iB1GJ97_HDfEWIrb94fI5Ran1gup0fnABXZKQqwq0Nj7fi9BeogwVsP8nmX20yq6pAijQG88kNM=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37a"),
+  title: 'Robotica ',
+  author: 'Esteban Damian Lannuti',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd3rpXTG508tLUMha6-byoYbt4q_jVXioVLKSXvfW1CsSd3aTe1qf5DxcE2nsR_FVtE_jWK3av36y0wswAC78_yUmmShStMHBhznqgRkgjHkcYO-fx2B_xuH_u3LcT2Ds3aA6I9YgxGTw_NYPRKU5KR=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37b"),
+  title: 'No te vayas',
+  author: 'Beverly Kaye Sharon Jordan-Evans',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfRaVFOQtDonxLtoFHNz1y3xRvku3buoD1kl5GrBQRRCDfvLCts7CaHa3GN2YH_5z27eo26gei52Cilpl4h3wZe07qAOtACekiPos247idcfR1P1cTV23lMSi-KG5otWGKMf25vTy2qNFw7Dbn7w1dN=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37c"),
+  title: 'Entre Letras',
+  author: 'Santillana',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHflJgi5Bn-v7VGkT_1B6P9WIr9E53dgZMplNxWw3xfhXuObWNzhtTJRN4g7jggYo1vGWD7-4Po6zGiYS-vg_urzCgOQEWQfnKVXY4zPRnyZDdxpTWWS8aoY02g2s1b_aQGYTkOGCREO7V6OCCalevg1=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37d"),
+  title: 'Antiguas civilizaciones del asia oriente',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeh-CpNKrH__To-xcftTyU1FI8t5qTbCOXnlEUjJ9A_pNHH4jYpjyUm5IvdMAecOmTRXrUXa4_2m72ZzjVo_UvGSfrleW-e_BI3Cd1_qV_ExHbTIn1TJ20M6-_Kh3Y17QBpZmTth1dwruIxVCicIOVf=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37e"),
+  title: 'Geo Atlas 360(Sur y oeste de America del Sur)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfI-nCQUionE125W8IIKDM1omRXkYN--wTH2NhO6sY6TWU9jYh5QABgFVAE6UDJgCBrPl4ZPftdHvkASi25lNUchZgixfa9mDHhTtTD6I1D_skQNZ9ANL6fge0zdozuTtN7oU89KcxB2HwxsG5CosSa=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37f"),
+  title: 'Geo Atlas 360(Sudeste de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeG3nLG7p30315Tqto66gdsrVJo_XOEj7wDhje6D0Mp39M7dBGN8IATxVuZfzh1p54SwcJ5HTI0A3OOGZGG1roKBwXN8qiyN47nzCv8t06VmvikedCCz5byB5JSE_NA-BqT2uKWyoUkXFXOQ4ZE2t-n=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f380"),
+  title: 'Geo Atlas 360(Norte y este de Am�rica del Sur)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHe2DXh7oJSYEpxlUpUKmX4GbRnJpHtHosv--1M-SqZ-GExL6-X82WcQgmnqjFjQiTN_I9CRB1SDxsyCKYH0EU3x3E9bMuwNLICDCe3SdzJ_zZy2FHqLMozUkvz6WD0T70-xMYG59w37n4o7dTDLKYec=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f381"),
+  title: 'Certamen de Provincial de Historietas 2015',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHedAfUXt-LxJcArb2UqZDVjkWMD_N8p2dQ2_iAaQaKJ5HUS3oOrnNcjIZhoTkOTdDNlkeqWbTlSukzH6Ejmi1814OOfNIYrOeQTntjiccV17iriThzQk1ibldPNLPkw3MYFuMT1KVDGsNrF5m61-6Rn=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f382"),
+  title: 'Geo Atlas 360(Oeste de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdXYaGUgU6drKohLY7dk39ja4znvDt2rjX0dN5-GTn4xNUmEXgoJeIu6em02P0_tvXdX1AsPFq8JvjXgS-Zju6z0UJ0cRt_Pdo6KwYa9fSdaA3eo_wCygUOgXg-RPt_cfua0ZDSbRKEuAnH-Z_-U9J2=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f383"),
+  title: 'Geo Atlas 360(Centro de Asia y Caucaso)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcSUfOHUz9PM0DSOxr2icq-AhjYrsGwxoJXaLTrUcuLaDoZWbEHvEj6dgJQ9a8bNtSPS8nIiTJQ1cMz3noiDgQV_OauhplHOk2ve5_o0lLUKrvb1iNkojDbAKxLqZ3LjsbIBzb5ohF4oSehg1Al2Mp9=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f384"),
+  title: 'Geo Atlas 360(Sudeste de Europa y Balcanes)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfhKWkcYcGrCKZwkDS3mg7rvjDSUroYs-V4oUg-GXzeX5Op3_i35ISAUyp3NfRWj63AcNWODekuvFvi1KHi2y_92CRULKpfvKY4FTUQFYrKL00Z-rDNehogoOuZA7qEtUS25mDA8eB6QmqOsscnB0X2=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f385"),
+  title: 'Geo Atlas 360(Sur de Africa)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHc8kIRo9jSzx-artK5iax_sWBGh_QkUClxjDRNEd58PYLBxQcP595NSwuWQDFfo88ssq5z50HggqB3y5rS_hr2dxva_TBbKZEhmKgRsFFpFFQXQ3XgGE16ljIqmXsduJvOqLX5xc2s17YWzZbFQGvev=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f386"),
+  title: 'Geo Atlas 360(Sur de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfTH8G6xOjQCW7bPTUKUCAZ1rgfRhfJ_EegvBmzmFWM83etuJvUlOpFJs-XslcMInAD1kW309YYdeXd6vwTTekrWxtPGa_dIktae26LI_1F0wWNeVKFf_3meP9wDIABC8CSGYnyJ8mwm6-EkT9ZNYw6=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f387"),
+  title: 'Geo Atlas 360(Este de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfXz7SAwiUtdqMCwAD2A9U5hb45cAGuSvZac7OBmUa2NhTRZBBdG7Rrx8wCFYzf2k7qOuh9xKVKiA6NJEbp9NCiOUhwdY0nBquWtk2_NYOgSBllqHwQkSOKl2NjENydBGOTTvBaoSDXLeuszdPGFoe3=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f388"),
+  title: 'Geo Atlas 360( Centro y este de Europa)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHc4aflr0BLiew3h6qeihYJ1HM932glkVZHHERvkJD6Jlqup_dqbx2WWiFUNPJQEnDRtdJCpBgIh1C4wEVJd_QBguRcEQipQQ76GYq82cIniXCvOCNeI6AYDpnONaOcAFkDKRiAFwrcFTAxZ6_ZcTe8o=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f389"),
+  title: 'Geo Atlas 360(Centro y este de �frica)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd9Q3LI6Cf3M55dcgh3j8nociXJ5uk79aNSc5c_xWIPI4q7P0itTusgWhYKfBcP9WUMnEoo60fjOKcYuoC9JLyC660N3V19qbmbBFAEEvbQFlitUc2K-8j3KptqhreL5ncZ2MGcRekPsKu9RaiMKqMm=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f38a"),
+  title: 'Geo Atlas 360(America Central)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHddkGchCvFKAMCGFVGhmgo3G4yXXjMa5UsIdKD2Uak4Q2q5xTKxu403tulIh23m21TO6LnY8Fj26FR2q9QEbXS_nQ_9NUEjcwj2-kO6ieDJV8ue_3izyykxCw5y26G9CsrsuqEZywUn6eX5ZiEsh0Y6=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f38b"),
+  title: 'Geo Atlas 360(Oeste de Europa)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfdbe2hC5VZPAF6J9nkq874iKLZFLrR5r4dgOcwYDV9-gGHnQW9IWN75yL9BIOiZxJW8jIKn18CX0wbm99GQQ7GJXRORgBRrxZTErbEQfb7rrjeklCzlvWtxy8AM_62SGO6RUGam_2bOO-1RefIs0Wv=w1252-h939-s-no?authuser=0',
+  __v: 0
+}
+[2023-10-25T22:18:09.232] [INFO] BOOK - Se trajeron todos los libros. Libros: {
+  _id: new ObjectId("653852f516c7fa312877f33f"),
+  title: ' El principito',
+  author: 'Antone de saint',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHctlbIg25PhOStyQzj1sG1dcO24RyYqya1Iv79Bc2FjJQWg-W62xyfl54eqXNyKdwEviU7an3EQ_koAnlOLyvx3DMoplUmM0b6hHXT2TL4tCXHi16ThTMeioCvwtaKVhTJB8QtzS5wvt56ELQ0v6oup=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f340"),
+  title: 'La independencia de  argentina y america',
+  author: 'Felix Luna',
+  category: 'Diccionario chico',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfIIwafqlMtmNOF4rnGlBe5221J4xhjyazt1U5T8RJQ8wtIQzNEpzB6_atCSQxUy5gZYNAbrpxmhfQ6g4cgX1ln9LbRUXmmBj1CN6a5dyqbXWcRFg_4abnMJhgq18wZ7euvCNCeVjMANKZDylMs2cib=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f341"),
+  title: 'Los Gatos Guerreros - Los cuatro Clanes-',
+  author: 'Erin Hunter',
+  category: 'Diccionario Grande',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfwRt3vt_cMIZ7sPflogTclk7TgtnDy5FIHRqsuoNNWQiPhBfSHAXOyDbvx2gclQ8JZHckkxWkPiUIC--1R0O4fgsnWrpbMolmRhkaAMgSgFU0v414kKxPUfAsB9S59SBl0aFHLq9PJmtTGS3l7oMAy=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f342"),
+  title: 'Maitena',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvOWwpBy_f41zl-c3Ci4UHGK8PpCGiS1374hvNyvpQZDnyi6cQx_VpoP2LGguW2dsddc1B3pYF91BAjM28UpAdI84D5GKer8Xxem-_eJvyKmrLKOeKuq8_xqy0gH_kXhX6Tdn0_pKcf8zdpBUhjFs4=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f343"),
+  title: ' Azabache',
+  author: 'Anna Sewell',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd2chvOzgQ3SWVQIp08Ii7beWYZAX6yMWNz01zRvsruaBp_C_R_bbWBTjzWVWD6uOjIwofz57cw5OBXqLVID_YXL8PT-CUj7WjboxkB6gsZKmi0UGdnI2TmsqqX4z6RPa3YllGyIJUjK7J34BSCBVpm=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f344"),
+  title: ' Horneritos',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHf-jaXglzHoHhUsX5tvaebpjySkzOA0rqgEacbTk6oxnGuHMylXXMnD9eGLMwA-zXhSAvdvkNBSTKRWxEZfnfTBPSeC5n4cYUHglOCjdDPEeQo6t2zs6ISONGmtXAoipDcBQIoVlwbz8nRvgoMeFTwz=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f345"),
+  title: 'El circulo de la suerte',
+  author: 'Andrea Ferrari',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfugVbtxkRQTEzOCanOzvzYAcbgPN8CUKVpRvHOTKCJB9BQd4a4OPi0Z6ZCGFvVGA0JQtDcP8DKz1HinVxVf_4qN0BazQ7ZQIvy36Sq4y25Yg7xgMIs54rH-eECPLrZ4V0xOlSIeuOSAtuL1nkrFM7y=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f346"),
+  title: 'Cuentos para seguir creciendo',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHctv39vsZKhNbETj8yyEiHH-2tNyJti0YQJISRA6FSAx7Mz5ufr2p8GCueooe4pqCeyzzPwfqpatsLhwNG_5FGroLGZjbEWq-E5P6STtZ9_CgU0q1mpqWYO7pkcbloX4RxO1SXWUOmaNeOPsNlbJIHu=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f347"),
+  title: 'Palabras escritas para vos',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdROro_A05vDlryj_bCSZLm6I9ROEOz5gC2Myy84_lP9qkYejQStTkwsr9ACEzMY-xZ8rebGniMLzJD7H_ynechYdliZ4ZN70BLEpb4-0fhHGAwJCJIhW2PjvKspy5b1xAw_aS8I8MRqrP3Xtnrj7MX=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f348"),
+  title: 'La casona de los experimentos',
+  author: 'Mario Mendez',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHerwVj4wpNNw9iN35xeR_lu-Ydw9OKkzXyxrOVQbY7cM7VkNNO0a-kuBWiBDBZqr4S8g9cP6FSD4ctqiOuV2MmMphs1iWfzYDZcxdbXb2Z43zBOHoHSl3i7tZboTMiG5dARs1q4VPmfOZjF5hp1zxQq=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f349"),
+  title: 'Isla Blanca',
+  author: 'Alfons Samper',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdwGmEVyHn-iUI28l7cfplcbOEnxH8dPx_DMHBpNyUQOrGhdUOk6fk12AffdnNgZtEMfGwb2oetbumOppGtDk8hhNB4j4YLasFcqTv6tI5HjQQlZRYZlzsf6xs8qIQiLS4QB27Hp3LxOMQ8p71yk-P8=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34a"),
+  title: 'Prosa y poesia escolar',
+  author: 'Gabriel Mistral',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdlNVU-BTFQ9QqAYe4dnZs8CSeEt8Rsq5CWJ-5xuXI9gyDhJowaJH76zT28_7ldvsbvVK-0vP_fGrYoLdJF9pXJTKpauIZJNCuZmYpPzJ4EgG_bzBHzNv6POgoRCz2pN2VHJ5G3w_na6zzmvwjSaSvG=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34b"),
+  title: 'Historia sobre un corazon roto y talvez un par de colmillos',
+  author: 'M.B.BROZON',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd0JvqLzymwheWIdqKmuE7U9DLNyW22r7PhcTjZ1MnBS8MtywMc7z1psChuRAyLK4xfGKdHVYT1eomo7zF1hnWqWz9UBFjKpQnbTgGUPbGbqW12UT1RbUBU2wumcXt8_Pu-1duaROCaaIlatOyAGIMS=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34c"),
+  title: 'No me digas Bond',
+  author: 'Andre Ferrari',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdmeImQ1eJRIqvadYtu5MGWYaHMWIgBZl0mQSTc7E2gYXamPu2jm079kIvKSLglVD38juvv_j_KXsPWP9Qj26GWwsvbZ5vv0rkvARVQ9ffX_sd_YOljEOiCAc3_QYbe1gNnCWTu-lH62ZoKVEdkuoin=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34d"),
+  title: 'Nadie te creeria',
+  author: 'Luis Pescetti',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdYz8iWReN6z21SqPtbpQYEaJM4VGIZtxGMmcOau2Z-_XXWgqaqHP57e4CVKNFqwOUxgw0QhNRRYSUIjYDajWOhLV95uyLLad8UCJel8cPrPJuIDYvX_Iu3Q_d1kH7t99-YTEkxHedKgOgdbuYIQjsA=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34e"),
+  title: 'Las aventuras del Sapo Ruperto',
+  author: 'Roy Becorcay',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHceKljMoaH92AWMl6Ig3IoaonN8YrljSLBZ6MB0ZHPEAau-caxAhA8_C5sG7zXDYvNbXxwP63XlUbTn4cOmmN0IaVgopaTapKA9vSrXaN0YlUQM4dH_Q1UIFJBkOzWUxe4Hlr8ibnnbsEhov2XSDeat=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f34f"),
+  title: 'Las mil y una noches en 10 cuentos',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd2BbctG0jPqNj_9T1hBwPHUM07DGDCMSL5-0cK4lmdeB27h5S0fl-ZCsKkfoNfg_iuia49Px81BsB5Af0qr_ixiMEtP_yj7eKfUP7ed8eUFQqeda8OtqDgEp0Pilt0YVHcDIfs5bD925AMqv8eFVjU=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f350"),
+  title: 'Lucila y Joan',
+  author: 'Griselda Galmez',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHc-d3KnqDEjOFPUlVx3AtbX2XlSssw9MZNZwtcpEMm9ZmqbZ1edWpzPX231MkShq_AFflirRLPpY1ixWJ1kfkh1PW2bSz4uYw-MWIErxxyiTaDpIXAdnjEgOZtaJL7nxODpVzU1iIJvJlWW_rRIB80g=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f351"),
+  title: 'Vampiricas Vacaciones y otros cuentos de risa',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcD_eZO-KUzkajaM4iJSUqxWK5Eo5eDdwiaFhPWbuBaicXcZlhDipixwQIUqOI-9IprRUw-gH2UYnuzaMgMucjzj8BkCWHwDpyqLERDTa0T6ih8Ztz0wzu4AU4mSSmVFEuKJ-cqRDAzHY3XoekB5NGt=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f352"),
+  title: 'El caso del inventor de pesadillas',
+  author: 'Miguel S. Soler',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdnRHSWjfGIqoRUZdIcBsHXahe65meakIxLbGlGbGViF7wSkFmyu9tLYSUeYzjAWgEQ_3iah0_vbSJnowPDfr7uK0F_D9twsCZ5CeAhMeGEd1LDKlzVuuoclnptOsjamfXyU5hasHss_0F1dxsB2F0Y=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f353"),
+  title: 'Cuentos de aventura para vivir una y mil historias',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfqBuZDFj3ltX9OQxxvCwgIH3Yt-2V3rLYPJ82X85L4UXEiMZO9j8GU_YOF0t5tXivtLTDWzkXK1jmWsZt-SnCi9_WNBafDwZ8AEcHawi3mZLIiczg3PttGWlVqvEfzvuot-YK6busad9lei1AIyu7s=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f354"),
+  title: 'El espejo roto',
+  author: 'Agatha Christie',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeUOlS0cCoI-AATU0siSa4QsXoqlmfJHVutmdhENzzFHeXnfFZBr0c290FwWxWOX6vusHMrINpAMzocY7PxcTaR8m9q00BwtTUoS6tZilv0HT5jhuzniR-5f1GMNF8BpLayeC6_dnSkJo8Jd049n-_O=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f355"),
+  title: 'Cuento con Angeles',
+  author: 'Carlos Joaquin Duran',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHewNlFHfmaRoat-8Ki0pTdDGCjXVA-AdTLp37DORH818vifMhiFATXbjGSCMVf3Y9nkizqSolrxIf-lkpK1FZHlTaFRPTcoSWv1vXHQg3B-g_INN9fN977jhlWJnEzSQTvDTJEwxKF7PIR4G0QTYwCY=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f356"),
+  title: 'Recuerdos para merceditas',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfZphBIzjyAwlxPzBDsuhhpweqw2MHou88EKLRki5aj7unrkAmRukicIz06YHJC1kaKAwts2PC6yPH6KovHVW54I_eXP9XADKb7d2WbwI01K_rLBtY4sn4AjACTID8L_dY0c5JmAnRzP9S5YJ8HJEVX=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f357"),
+  title: 'FantasVille',
+  author: 'Christopher Pike',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfZHmGE79d1aVAnKgUbFGejQd9WZ_MkrEBFMbUdnUS2WlooqXTPqsEGxVkXvTnxJewONzKVxMzcCFxTVJHIJhUrbjJpWGg_I4HQv0ADtP9uw3TeIdWRdGfdd6HiHx9PF51dLBIaiEVdIG9-w99oZgNP=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f358"),
+  title: '¿Quien se anima a bajar al sotano?',
+  author: 'Juan Pedro Mc Loughlin',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdH3Ap1dZiP1Lvq_rR7GRQGwLKz367I6MDEdnuuqwMbVv2xATgfnSVjgJLW3iTq5_SYMlo66dCBS9GbA6TsvvwZ3szMbadGbDLJCimsU2bsxo3kxVAbagQ-tctJK2Blz3quWcPAtDSkgSd7uUBgRu54=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f359"),
+  title: 'Tambien las estatuas tienen miedo',
+  author: 'Andrea Ferrari',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvDUAjdDZNucCQSA0PvJC4ejIdcO7rgcyUvKzx1zWVV21-2tO6TxlYaAVejBIBK2NAf79HJTJJVniapS5lFItoW68fPzXJxOPZQekuRo57L9HathOsCJnThQfpJQF4kkaBLrH5ioMM_ioz6nYx94Vl=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35a"),
+  title: 'El Mago de Oz ',
+  author: 'Lyman Frank Baum',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvX6P9sTUgJ4cihO9oLfijR-4gq9kNmDJZEB6sY6ZzQtgY554ENCBruqFexYUHO8XCOD9Uzjsp7PoeDPye76KPzqDpnAVTnXmHzuhSrzGN21GZTDR2VTCUg3aSlTc-2A8cJ3o2EfXJbkeWNRJAv87J=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35b"),
+  title: 'Lucas',
+  author: 'Francine Ruel',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdPxDfnuuPhe5Uu90UuZayxpAFw8XeOXihhln4RtcMGVLXDnF5Ugt3LHKKIxmbv_pUS-sQbda1F07hCRigSDI0bMiWTSettUFxUPusCt1kRSC2EWOHTBPFoQmCFfWmvK7N7fXuOH78udmhNiQ74PHGL=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35c"),
+  title: 'Alicia en el pais de las maravillas',
+  author: 'Lewis Carrol',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcOH0lHFv-ldwwUAiwdD5Mm3NqS-u_QLaRmZz68KWQu-ksLIKDjUSe_B7tmN0nO_Lf_tvAOgnGKYp3pWFPA9Ys50PX4wOAzv6eKOrX0WGoDh0qWXiUNhGFR2A3hctKm5DFtntAqBmWdDhrw2PmQrP0I=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35d"),
+  title: 'Cuentos populares de picaros y necios',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeR6xvCCZ-23P7v0cUcrfQ8yQRc-9mvzgcYsbeF35Ld5LWT2Xq5y_1PyHnT5hQDKAjrwd-aCVkT3bfwiwGKCj-6NX9qMZMoxfnlmSYNf4LF2Vobd6r5WEW8wDyZ-49SC1EGiHUXU0ATNQbeJ9u7qgnP=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35e"),
+  title: 'La puerta Abierta',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfSyi1wCVuvXCzV66pmrjWX1klPhPzj4kdj9-eFsCRd0brtdrWj9xMU7x-QqSerDT0wu8J7MnjYHT9ERJ-r4q-9mopGtARbJnFkBDeDvW0UxsWTytQfXgOGL746T9OGO2gDcNs7QEyNtHAAp-FIxnYs=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f35f"),
+  title: 'Decimas',
+  author: 'Violeta Parra',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd39MMI6iUVRpLdQwuCP-5Qx9vn0aoAwkk4H15K2TPe7SkUw9Zq0DG2QX4RiR8MmSwQSBRcYjNl3C_HKch0IqPudKz2APeoMMIJWZFotNj-O9Pnv-BFYHqHTkAQVslMPVKjkns0iVVXMf6QizIBAjU5=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f360"),
+  title: 'Gaturro y el poder del prisma magico',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd4jm33K1Pay5dCk6lCS2VaBFUL4HP5dGnXGBR7XP2pZEDaCMa2w3ctep6VpMHcuUFTeQ0OVtIn9drKcOmV49Pa6CGzbGQ-UIKZQiF68gzv4YBw1x1ljCaLqY_bS33XCM8LTF_UtTRFuumhvL5an120=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f361"),
+  title: 'El Matadero y La Cautiva',
+  author: 'Esteban Echeverria',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHe_u71CURpbRtwV4mDyCaZQyyKXRDKhAHPE0EA9P3fGbodzypnMzM883_8Phgs0POxtR76JKEAS5bj5QgbPUcAKE-yEa0mAwa_yx-HAg9ZorO8fYEBrQICinV2wWA6whegzSiyMV6zllF9Qejp-iTH1=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f362"),
+  title: 'Jinetes de las olas',
+  author: 'Fabian Sevilla',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHceC3LxqLT7Eq5EaQpEID8tFbm5izbD9C2aITCgYXTxkHvCbZvQ0qApIDzcbz59u817wIeeqnSG2f3cciAL7jUBNvfwzX6TkwpSaYpUV9g7FHa-lBlMskh4FG2njvktxP3xkKVY1ojFw1hmV5zP1rP5=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f363"),
+  title: 'La noche del meteorito',
+  author: 'Franco Vaccarini',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHejEV6HXATyXN-fc354Tjeo12dAd_pvtF7xzzsaGzZvBXDD60J_8j92bQaD2Cbng_wyCmi6eaffS4cAWulyMrRVOhq7gjzB4z3nBzt6Mggh5hK4lR9n0OeNYIoYDbiKOO4HL4IQwVyl75FNVFMscEAE=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f364"),
+  title: 'El extraño Caso del Dr.Jekyll Mr.Hyde',
+  author: 'Robert Louis Stevenson',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcmjz6we-mTH2R232sh4ebaSsaPyw9pmmUDR_WHq7KlV8LCvZX8qqq5Qz-3wP1WkOzQpW9PyEWQmRSrs9eIREbiJs75-hZORJblTAJapEJ9DH2g0w6J1GEemndINdTlFEZmkMu2rb07UrpVBBfB9S-w=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f365"),
+  title: 'Mi primera Biblia',
+  author: 'Desconocido',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfKJl7fnheB-rrbbItlacUYQqLzrXQUgrmB5_7F9RwrTLIYn-veFzJ3pIcziU6yu-MCsvMuUzZCG0tZ-fzNnLoT-eruICOziZToc1ebVqN1OagshXTBB7FnRK0eBpWrXqTarvN-nTbJbe_6X0cvaCNV=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f366"),
+  title: 'Muerte en la Vicaria',
+  author: 'Agatha Christie',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdIdnesbBS5aPUyihfm2wdvq45ZG7Hu74n11kLexH25crN7ExzL4d3gmx52lpv5W0ZULHXn4BUP-xGCpRWXJzia1yFwlj3KALui-TjnGh0LTnN2397LvHDobyLhaDVLWGt6dw5mK5Yr92Hc5myli60P=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f367"),
+  title: 'El Retrato de Dorian Gray',
+  author: 'Oscar Wilde',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd2bnrU_Re4g7lOXKj-R7EVJcNX7w33QWdU2CAm4OEbBQDyWyeKaHGO_M3nCOMqsk1Js1XFbH10zuUU4Mw2Be16zDJWUTe7v5PbpRgZJdanSmcKcnKOtUNw2IdzyvG925PWo0XbGs4-REsbFMsLNLmS=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f368"),
+  title: 'Leyendas',
+  author: 'Gustavo A. Becquer',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfvNWfwunWn-ZsMnoM8FS_QMD22FmQF5VWjZ0qwtSKqGBi7KNYgYhnW44XIgaFYARdZjAXggjikPO8e1RLlIXBGIOj6APkRkyS011YHxv-gXIyyb7oy1j6Hm0wuc2zgGVeHr8JtwxBohXgttD-OtW2u=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f369"),
+  title: 'El almacen de las palabras terribles',
+  author: 'Elia Barcel',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHe0W7ANLZMSaI1njwLIfw0Z0nZE4v0z94lZCuPgck5swJjT1Qkshmmx4uI3emn9fXSMNigswWQsH9Cnnag2isNiiW7Dcf-hdbPnU6wNEcuUrU28prwRaklLnRoOkp8F6rc7j-o6Y_yXsVaO0ChixvuX=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36a"),
+  title: 'Los ojos del perro siberiano',
+  author: 'Antonio Santa Ana ',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfSOjemsGS0mHjB1XlGZJidfJ1AYAWHA00NveOv7kRBoWs9JY7kdfWecaNP4Zy-dv8RFoD7km57mUB4Nf_ldoVPK0X88E3ufpKGqy-veIv2iHOQJ1fE9h91NoHjASbqLH9ynfKOr3mndujdrV29iOaJ=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36b"),
+  title: 'Los arboles mueren de pie',
+  author: 'Alejandro Casona',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHexVlzgyvcGuqSMtVJZKtL6DbWYsTGM1sxJUdsiOXELYsRPsBlimMiiROLcfitDCO_A0uYF9e8lrZ-PkP2QwZ0Uen4OHDXUVrapAM5VhZXAKqyiJ8sIMmRzOQiVA15uNeWkyiOEF5giqRsDUMd_-pPo=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36c"),
+  title: 'Vidas Cruzadas',
+  author: 'Danielle Steel',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeoSB7grppLr_58IcNkFZJ9EqHoD50_YODELqzh0Q-RZDADWxY55VKvI5l27ZceMyZvaChpnZDVj5vyg0rEv7sx5tT0V-I39AuBN3dYBGH6-rK9VfMgckpXpIaE_2bb1oVndbOhC0Sw-oTalsmfiXYP=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36d"),
+  title: 'Una princesa en Berlin',
+  author: 'Arthur Solemssen',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfolC5S3Mr02__IVEEnwlQ-Ynm3tz72_o03853nV07VSLlP9Xvl7lxKr6LxXL2wZZ7quMKaBlr9RBgRTnQYTk7EcsXJU3NaQz_tcFwLm64vbBGWFniofkmPi2xN676-FrJKZJu7NJWw6s6TSIov2duA=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36e"),
+  title: 'Puerto Secreto',
+  author: 'Jack Higgins',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcy_NXre6jJf_C1qwykDk5viTEJWH9fbOOxC7cEi4ee8QArzMzlz7YlDKrtU8OOC77k6-lN_aeQUCVffB8ecnhIqm310WJyiPITLpTZZzpVoUpKKcqrTaUYml1itEuOBYmz3rTf-YajjSjBO_8E6C9M=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f36f"),
+  title: 'Dias de Gracia',
+  author: 'Brenda Jagger',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcmmCI8k7GN1NuVXPDP_Wc86wVGnUAT_McjzoO1MFciLFy1QHtVh43tgZZnwpuj1on-R7IymLGXbOy26u0oPgCqEgkqmRkiGbHuphrYkBs3ARNJEhrp1nsbdLkP7joUyOJ5ZLyfdr42W9LBKjZXDplv=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f370"),
+  title: 'Un instante en el viento',
+  author: 'André Brink',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfGl5qyqNdccWXGQr9GubIYjS73OB_p0DNy-JMwcLpbU0N4_XoBagddG1NWfAiUnEQIzceBs6PaRKPIDdOh5FbAV6_Zd32WEig3WOHCb5tDRJFKcE0Oo9PSOquBISoBtmdviST_vxGuJ35_LWMUrtJ6=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f371"),
+  title: 'El Paso Milta',
+  author: 'Leon Uris',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHevF47ON32gg-kgXK941LeXk0AnC1lGD1naGWyz5YjsF6IM7TFO2tl_Bs9dfjJ3PiYYTOa2_Kf4TA09_K2KUtZEqJiimQquaMOp2_54UESqekQ0L54j5fAZud8jLBKdXB_1jmejzOsQZ8owLJtPuEOf=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f372"),
+  title: 'Breve Historia de los Argentinos',
+  author: 'Felix Luna',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfM6-QkVwAJ74vFgXlY_NLBB2y_tk7-xQBkKTn1kWq8t25puSBsoe5jMoyziSfMZ0UhoiT5xgGa-xFG1ZbrSB6xB8LfI2gH0GXR95xSbQPin4CGBYz8VBISAE0fkw2cfmNhaFF0ylkQHtZEUrDxktHV=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f373"),
+  title: 'Odisea',
+  author: 'Homero',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeP8yOrn5iqz8Eh549DsVxcDgLWQFoBROAFgDKmvvbgUW2Bc1E5M95GwRZ55unDU3Kjo3k-6oBarJs0mpP-Xq1rNe2WEoZ7Zp4ifGHw_kfbxGFeJQKNWf0EFyeq0NT-JNrEARbcc5298VytLQhLgsL0=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f374"),
+  title: 'Zona de Muerte',
+  author: 'Patricia Cornwell',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcpxRzCAZxubieya_FPUCNKaLbZVwslDfKG0J9lnd6z70k8gqegXuDVHFUvAj4UpJnogQv4JxlQWN8hbq1F3H4xQdEiwlJIgNOMWunrOL7_5uiqGbxJCj3OUj5Iw_mOqxpw5nJecjqSsEKnB8HR-DKL=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f375"),
+  title: 'Diez mujeres',
+  author: 'Marcela Serrano',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfrjFIaN3YN9hUr2zWJ33tBDksmoI0EyQGxhzmg50Hwpp5HtXTkA8LoNer-InpzbEmzbDiyrshiiSlBDe5TnpmaK5ybbS6DAfuUQke6ruZMK_WyrtsLkJAchC7YI3prxtuoQUsQ_3Up_JU-vpjwfX75=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f376"),
+  title: 'La Crisis de las ciudades',
+  author: 'Wolf von Eckardt',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeAdo9eeA_9LrTGeyzfpYohx3VOVn0__wLHRjEemhNppwblZHv3d1RM3Ly7zNz7_xQmeIFT1WX4B09GJsUczSr2cNMGjOhQY-7xyTbeIpeKSlauqQgQB3esLvQ_znvy6iv6NNWS64Vp9-UI-YEO43jf=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f377"),
+  title: "Dell'Amore Del Dolore Delle Donne",
+  author: 'Umberto Veronesi',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdNom95GfU3Wm2MNSFYVWzmEqF3ZepG33CBVstxor8LRCeLmuuY-vOdXcduDp86bJWkyLodg06X3Dg5sjGVKKlE_qtS-yIoj1Ia1UgB1UZieCI15n2ohDBjyj_9J9YUWUlQG6qshzGZ-KNbQyiKMCBG=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f378"),
+  title: 'Lo profundo del marcito',
+  author: 'Fabricio Marquez',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdVxo7BHaz7Pg8lGFs6xFtqyjX2hApFEoHe98nunFLZ38mcqc6mu8LiqEeParIheUFSvEf8EYxiI5XC7e_qFqSFonxxpnCaypSdftzcapwV6EJx3hh_wN0JmNYdtrUaXuLOSIwrqb_kUbctFsoqdi2u=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f379"),
+  title: 'Paula',
+  author: 'Isabel Allende',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdiYOmozI-6smQ72VDoO163hS9E5O82y36ZrcO2LvXCgrHogRd4sXraagGoTWc9RUwr9j271n6Q0iB1GJ97_HDfEWIrb94fI5Ran1gup0fnABXZKQqwq0Nj7fi9BeogwVsP8nmX20yq6pAijQG88kNM=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37a"),
+  title: 'Robotica ',
+  author: 'Esteban Damian Lannuti',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd3rpXTG508tLUMha6-byoYbt4q_jVXioVLKSXvfW1CsSd3aTe1qf5DxcE2nsR_FVtE_jWK3av36y0wswAC78_yUmmShStMHBhznqgRkgjHkcYO-fx2B_xuH_u3LcT2Ds3aA6I9YgxGTw_NYPRKU5KR=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37b"),
+  title: 'No te vayas',
+  author: 'Beverly Kaye Sharon Jordan-Evans',
+  category: 'Texto literario',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfRaVFOQtDonxLtoFHNz1y3xRvku3buoD1kl5GrBQRRCDfvLCts7CaHa3GN2YH_5z27eo26gei52Cilpl4h3wZe07qAOtACekiPos247idcfR1P1cTV23lMSi-KG5otWGKMf25vTy2qNFw7Dbn7w1dN=w704-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37c"),
+  title: 'Entre Letras',
+  author: 'Santillana',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHflJgi5Bn-v7VGkT_1B6P9WIr9E53dgZMplNxWw3xfhXuObWNzhtTJRN4g7jggYo1vGWD7-4Po6zGiYS-vg_urzCgOQEWQfnKVXY4zPRnyZDdxpTWWS8aoY02g2s1b_aQGYTkOGCREO7V6OCCalevg1=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37d"),
+  title: 'Antiguas civilizaciones del asia oriente',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeh-CpNKrH__To-xcftTyU1FI8t5qTbCOXnlEUjJ9A_pNHH4jYpjyUm5IvdMAecOmTRXrUXa4_2m72ZzjVo_UvGSfrleW-e_BI3Cd1_qV_ExHbTIn1TJ20M6-_Kh3Y17QBpZmTth1dwruIxVCicIOVf=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37e"),
+  title: 'Geo Atlas 360(Sur y oeste de America del Sur)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfI-nCQUionE125W8IIKDM1omRXkYN--wTH2NhO6sY6TWU9jYh5QABgFVAE6UDJgCBrPl4ZPftdHvkASi25lNUchZgixfa9mDHhTtTD6I1D_skQNZ9ANL6fge0zdozuTtN7oU89KcxB2HwxsG5CosSa=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f37f"),
+  title: 'Geo Atlas 360(Sudeste de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHeG3nLG7p30315Tqto66gdsrVJo_XOEj7wDhje6D0Mp39M7dBGN8IATxVuZfzh1p54SwcJ5HTI0A3OOGZGG1roKBwXN8qiyN47nzCv8t06VmvikedCCz5byB5JSE_NA-BqT2uKWyoUkXFXOQ4ZE2t-n=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f380"),
+  title: 'Geo Atlas 360(Norte y este de Am�rica del Sur)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHe2DXh7oJSYEpxlUpUKmX4GbRnJpHtHosv--1M-SqZ-GExL6-X82WcQgmnqjFjQiTN_I9CRB1SDxsyCKYH0EU3x3E9bMuwNLICDCe3SdzJ_zZy2FHqLMozUkvz6WD0T70-xMYG59w37n4o7dTDLKYec=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f381"),
+  title: 'Certamen de Provincial de Historietas 2015',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHedAfUXt-LxJcArb2UqZDVjkWMD_N8p2dQ2_iAaQaKJ5HUS3oOrnNcjIZhoTkOTdDNlkeqWbTlSukzH6Ejmi1814OOfNIYrOeQTntjiccV17iriThzQk1ibldPNLPkw3MYFuMT1KVDGsNrF5m61-6Rn=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f382"),
+  title: 'Geo Atlas 360(Oeste de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHdXYaGUgU6drKohLY7dk39ja4znvDt2rjX0dN5-GTn4xNUmEXgoJeIu6em02P0_tvXdX1AsPFq8JvjXgS-Zju6z0UJ0cRt_Pdo6KwYa9fSdaA3eo_wCygUOgXg-RPt_cfua0ZDSbRKEuAnH-Z_-U9J2=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f383"),
+  title: 'Geo Atlas 360(Centro de Asia y Caucaso)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHcSUfOHUz9PM0DSOxr2icq-AhjYrsGwxoJXaLTrUcuLaDoZWbEHvEj6dgJQ9a8bNtSPS8nIiTJQ1cMz3noiDgQV_OauhplHOk2ve5_o0lLUKrvb1iNkojDbAKxLqZ3LjsbIBzb5ohF4oSehg1Al2Mp9=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f384"),
+  title: 'Geo Atlas 360(Sudeste de Europa y Balcanes)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfhKWkcYcGrCKZwkDS3mg7rvjDSUroYs-V4oUg-GXzeX5Op3_i35ISAUyp3NfRWj63AcNWODekuvFvi1KHi2y_92CRULKpfvKY4FTUQFYrKL00Z-rDNehogoOuZA7qEtUS25mDA8eB6QmqOsscnB0X2=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f385"),
+  title: 'Geo Atlas 360(Sur de Africa)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHc8kIRo9jSzx-artK5iax_sWBGh_QkUClxjDRNEd58PYLBxQcP595NSwuWQDFfo88ssq5z50HggqB3y5rS_hr2dxva_TBbKZEhmKgRsFFpFFQXQ3XgGE16ljIqmXsduJvOqLX5xc2s17YWzZbFQGvev=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f386"),
+  title: 'Geo Atlas 360(Sur de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfTH8G6xOjQCW7bPTUKUCAZ1rgfRhfJ_EegvBmzmFWM83etuJvUlOpFJs-XslcMInAD1kW309YYdeXd6vwTTekrWxtPGa_dIktae26LI_1F0wWNeVKFf_3meP9wDIABC8CSGYnyJ8mwm6-EkT9ZNYw6=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f387"),
+  title: 'Geo Atlas 360(Este de Asia)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfXz7SAwiUtdqMCwAD2A9U5hb45cAGuSvZac7OBmUa2NhTRZBBdG7Rrx8wCFYzf2k7qOuh9xKVKiA6NJEbp9NCiOUhwdY0nBquWtk2_NYOgSBllqHwQkSOKl2NjENydBGOTTvBaoSDXLeuszdPGFoe3=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f388"),
+  title: 'Geo Atlas 360( Centro y este de Europa)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHc4aflr0BLiew3h6qeihYJ1HM932glkVZHHERvkJD6Jlqup_dqbx2WWiFUNPJQEnDRtdJCpBgIh1C4wEVJd_QBguRcEQipQQ76GYq82cIniXCvOCNeI6AYDpnONaOcAFkDKRiAFwrcFTAxZ6_ZcTe8o=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f389"),
+  title: 'Geo Atlas 360(Centro y este de �frica)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHd9Q3LI6Cf3M55dcgh3j8nociXJ5uk79aNSc5c_xWIPI4q7P0itTusgWhYKfBcP9WUMnEoo60fjOKcYuoC9JLyC660N3V19qbmbBFAEEvbQFlitUc2K-8j3KptqhreL5ncZ2MGcRekPsKu9RaiMKqMm=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f38a"),
+  title: 'Geo Atlas 360(America Central)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHddkGchCvFKAMCGFVGhmgo3G4yXXjMa5UsIdKD2Uak4Q2q5xTKxu403tulIh23m21TO6LnY8Fj26FR2q9QEbXS_nQ_9NUEjcwj2-kO6ieDJV8ue_3izyykxCw5y26G9CsrsuqEZywUn6eX5ZiEsh0Y6=w1252-h939-s-no?authuser=0',
+  __v: 0
+},{
+  _id: new ObjectId("653852f516c7fa312877f38b"),
+  title: 'Geo Atlas 360(Oeste de Europa)',
+  author: 'Desconocido',
+  category: 'Libro de estudio',
+  img: 'https://lh3.googleusercontent.com/pw/ADCreHfdbe2hC5VZPAF6J9nkq874iKLZFLrR5r4dgOcwYDV9-gGHnQW9IWN75yL9BIOiZxJW8jIKn18CX0wbm99GQQ7GJXRORgBRrxZTErbEQfb7rrjeklCzlvWtxy8AM_62SGO6RUGam_2bOO-1RefIs0Wv=w1252-h939-s-no?authuser=0',
+  __v: 0
+}
+[2023-10-25T22:18:14.917] [INFO] BOOKMANAGER - Se subio el cardBook con el ID 6539be56c6686eaf37dfe78c con el libro 653852f516c7fa312877f341
+[2023-10-25T22:18:15.991] [INFO] BOOKMANAGER - Se trajeron 1 tarjetas de los libros correctamente
+[2023-10-25T22:18:16.099] [INFO] BOOKMANAGER - Se trajeron 1 tarjetas de los libros correctamente
+[2023-10-25T22:19:13.562] [DEBUG] APP - Server escuchando en el puerto  8080
+[2023-10-25T22:19:14.431] [DEBUG] MONGO - ¡Conectado pa!
