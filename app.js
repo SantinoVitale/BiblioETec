@@ -5,6 +5,7 @@ import { bookRouter } from "./router/book.router.js";
 import { booksManagerRouter } from "./router/booksManager.router.js";
 import cors from "cors";
 import { defaultlogger } from "./utils/log4js.js";
+import { userRouter } from "./router/user.router.js";
 
 
 // * CONFIGURACION EXPRESS
@@ -21,6 +22,7 @@ connectMongo();
 // * ROUTERS
 app.use("/api/books", bookRouter);
 app.use("/api/booksManager", booksManagerRouter);
+app.use("/api/users", userRouter)
 
 
 app.listen(port, () => {

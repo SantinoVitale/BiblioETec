@@ -5,20 +5,33 @@ const userCollection = "users"
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    max: 100,
+    required:true
   },
   lastName: {
     type: String,
-    max: 100,
+    required:true
+  },
+  course:{
+    type: String,
+    required: true
+  },
+  phone:{
+    type: Number,
+    required: true
   },
   password: {
     type: String,
-    max: 100,
+    required:true
   },
   email: {
     type: String,
-    max: 100,
     unique: true,
+    required:true
+  },
+  role:{
+    type:String,
+    required:true,
+    default: "student",
   },
   books:{
     type:[
