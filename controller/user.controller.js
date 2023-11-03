@@ -1,6 +1,8 @@
 import { userModel } from "../DAO/models/user.model.js";
 import { userLogger } from "../utils/log4js.js";
 import { comparePassword, hashPassword } from "../utils/bcrypt.js";
+import jwt from "jsonwebtoken";
+import config from "../config/dotenv.config.js";
 
 class UserController{
   async register(req, res){
@@ -71,14 +73,46 @@ class UserController{
         valid: false
       })
     }
-
-    userLogger.info(`User with the ID ${user._id} Logged correctly`);
-    return res.status(200).json({
-      status: "success",
-      message: "User Logged",
-      valid: true,
-      payload: user
+    jwt.sign({email: user.email, id: user._id, name: user.firstName}, config.secretJwt, {}, (err, token) => {
+      if(err){
+        userLogger.error(err)
+        throw err
+      }
+      userLogger.info(`User with the ID ${user._id} Logged correctly`);
+      return res.status(200).cookie("token", token).json({
+        status: "success",
+        message: "User Logged",
+        valid: true,
+        payload: user
+      })
     })
+  }
+
+  async getUser(req, res){
+    const { token } = req.cookies
+    console.log(token);
+    if(token){
+      jwt.verify(token, config.secretJwt, {}, (err, user) => {
+        if(err){
+          userLogger.error(err)
+          throw err
+        }
+        userLogger.info("Usuario already logged, please continue")
+        return res.status(200).json({
+          status:"success",
+          message: "Usuario already logged, please continue",
+          payload: user,
+          valid:true
+        })
+      })
+    } else {
+      userLogger.warn("User not logged, please log in");
+      return res.json({
+        status: "error",
+        message: "User not logged, please log in",
+        valid: false
+      })
+    }
   }
 }
 

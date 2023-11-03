@@ -100,7 +100,7 @@ class BooksManagerController{
     }
 
     const deleteBookCard = await booksManagerService.delete(bid)
-    if (deleteBookCard.deletedCount===0)
+    if (!deleteBookCard)
     {
       bookManagerLogger.error(`No se pudo borrar el bookCard con el ID ${bid}. Error: ${deleteBookCard}`)
       return res.status(400).json({

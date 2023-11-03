@@ -1,4 +1,5 @@
 import { booksManagerModel } from "../DAO/models/booksManager.model.js"
+import { bookManagerLogger } from "../utils/log4js.js"
 
 class BooksManagerService{
   async get(){
@@ -23,8 +24,20 @@ class BooksManagerService{
   }
 
   async delete(bid){
-    const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid)
-    return deleteBookCard
+    try {
+      const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid);
+      if (deleteBookCard) {
+        // Si el libro se eliminó correctamente, retornar true
+        return true;
+      } else {
+        // Si el libro no se encontró para eliminar, también retornar true
+        return true;
+      }
+    } catch (error) {
+      // En caso de error, retornar false
+      bookManagerLogger.error("Error al eliminar el libro:", error);
+      return false;
+    }
   }
 }
 
