@@ -2,6 +2,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const mode = process.argv[2];
+
+dotenv.config({
+  path:mode=== "DEVELOPMENT"? "./.env.development.local" : "./.env.production.local"
+});
 
 export default{
   port: process.env.PORT,

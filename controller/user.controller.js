@@ -73,7 +73,7 @@ class UserController{
         valid: false
       })
     }
-    jwt.sign({email: user.email, id: user._id, name: user.firstName}, config.secretJwt, {}, (err, token) => {
+    jwt.sign({email: user.email, id: user._id, name: user.firstName}, config.secretJwt, {expiresIn:"1h"}, (err, token) => {
       if(err){
         userLogger.error(err)
         throw err
@@ -90,7 +90,6 @@ class UserController{
 
   async getUser(req, res){
     const { token } = req.cookies
-    console.log(token);
     if(token){
       jwt.verify(token, config.secretJwt, {}, (err, user) => {
         if(err){
@@ -113,6 +112,26 @@ class UserController{
         valid: false
       })
     }
+  }
+
+  async logout(req, res){
+    const { token } = req.cookies
+    
+    if(!token)
+    {
+      userLogger.error("User try to logout without a login token")
+      return res.status(400).json({
+        status: "error",
+        message: "User try to logout without a login token",
+        valid: false
+      })
+    }
+    userLogger.info("User token deleted succefully")
+    return res.status(200).cookie("token", "", {maxAge: 1}).json({
+      status:"success",
+      message: "User token deleted succefully",
+      valid:true
+    })
   }
 }
 
