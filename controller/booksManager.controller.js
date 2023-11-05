@@ -46,15 +46,15 @@ class BooksManagerController{
   }
 
   async post(req, res){
-    const {title, books} = req.body;
+    const {user, books} = req.body;
     const fechaActual = new Date();
     const fechaArg = new Date(fechaActual.toLocaleString("en-US", { timeZone: "America/Argentina/Buenos_Aires" }));
     const unaSemana = 7 * 24 * 60 * 60 * 1000; // 7 días en milisegundos
     const fechaMasUnaSemana = new Date(fechaArg.getTime() + unaSemana);
 
-    if (!title || !books)
+    if (!user || !books)
     {
-      bookLogger.error(`Faltó alguno de los 2 campos. Campo title: ${title}, books: ${books}`);
+      bookManagerLogger.error(`Faltó alguno de los 2 campos. Campo user: ${user}, books: ${books}`);
       return res.status(400).json({
         status: "error",
         message: "No se pudo subir el libro debido a que faltan datos",
@@ -62,7 +62,7 @@ class BooksManagerController{
       })
     }
 
-    const postBookCard = await booksManagerService.post(title, fechaArg, fechaMasUnaSemana, books, "Usuario Prueba")
+    const postBookCard = await booksManagerService.post(fechaArg, fechaMasUnaSemana, books, user);
 
     if(!postBookCard)
     {

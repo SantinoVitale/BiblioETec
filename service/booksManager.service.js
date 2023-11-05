@@ -3,17 +3,17 @@ import { bookManagerLogger } from "../utils/log4js.js"
 
 class BooksManagerService{
   async get(){
-    const booksCards = await booksManagerModel.find().populate("books")
+    const booksCards = await booksManagerModel.find().populate("books").populate("owner");
     return booksCards
   }
 
   async getById(){
-    const bookCard = await booksManagerModel.findById(bid).populate("books")
+    const bookCard = await booksManagerModel.findById(bid).populate("books");
     return bookCard
   }
 
-  async post(title, date, expireDate, book, user){
-    const postBook = await booksManagerModel.create({title: title, retiredDate: date, expireDate: expireDate, books: book, owner: user})
+  async post(date, expireDate, book, user){
+    const postBook = await booksManagerModel.create({retiredDate: date, expireDate: expireDate, books: book, owner: user})
     return postBook
   }
 
