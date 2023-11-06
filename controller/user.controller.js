@@ -7,10 +7,10 @@ import config from "../config/dotenv.config.js";
 class UserController{
   async register(req, res){
     const {firstName, lastName, course, phone, password, email} = req.body;
-    if(!firstName || !lastName || !course || !phone || !password || !email)
+    if(!firstName || !lastName || !course || !parseInt(phone) || !password || !email)
     {
       userLogger.error("Missing values")
-      return res.status(400).json({
+      return res.status(200).json({
         status: "error",
         message: "missing values",
         valid: false

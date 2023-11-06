@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const mode = process.argv[2];
+const mode = process.argv[3];
 
 dotenv.config({
   path:mode=== "DEVELOPMENT"? "./.env.development.local" : "./.env.production.local"
