@@ -133,6 +133,8 @@ class UserController{
       valid:true
     })
   }
+
+  
 }
 
 export const userController = new UserController()

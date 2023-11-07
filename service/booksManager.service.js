@@ -1,5 +1,6 @@
 import { booksManagerModel } from "../DAO/models/booksManager.model.js"
 import { bookManagerLogger } from "../utils/log4js.js"
+import { userService } from "./user.service.js";
 
 class BooksManagerService{
   async get(){
@@ -18,16 +19,20 @@ class BooksManagerService{
   }
 
   async put(bid, info){
-    const { title, bookId } = info;
-    const putBookCard = await booksManagerModel.updateOne({_id: bid}, {title: title, book: bookId})
+    const { bookId } = info;
+    const putBookCard = await booksManagerModel.updateOne({_id: bid}, {book: bookId})
     return putBookCard
   }
 
-  async delete(bid){
+  async delete(bid, user){
     try {
       const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid);
       if (deleteBookCard) {
-        // Si el libro se eliminó correctamente, retornar true
+        userService.getById(user).then((user) => {
+          console.log(user.books);
+          const newUser = user.books.filter((e) => e._id.toString() !== bid)
+          console.log(newUser);
+        })
         return true;
       } else {
         // Si el libro no se encontró para eliminar, también retornar true

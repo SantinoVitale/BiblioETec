@@ -1,5 +1,6 @@
 import { booksManagerService } from "../service/booksManager.service.js"
 import { bookManagerLogger } from "../utils/log4js.js"
+import { userService } from "../service/user.service.js"
 
 class BooksManagerController{
   async get(req, res){
@@ -62,25 +63,28 @@ class BooksManagerController{
       })
     }
 
-    const postBookCard = await booksManagerService.post(fechaArg, fechaMasUnaSemana, books, user);
-
-    if(!postBookCard)
-    {
-      bookManagerLogger.error(`No se pudo subir el cardBook. Error: ${postBookCard}`);
-      return res.status(400).json({
-        status: "error",
-        message: "No se pudo subir el libro",
-        valid: false
+    await booksManagerService.post(fechaArg, fechaMasUnaSemana, books, user)
+    .then(async (data) => {
+      const userPostCard = await userService.put(user, data._id);
+      if(!data || !userPostCard)
+      {
+        bookManagerLogger.error(`No se pudo subir el cardBook. Error: ${data}`);
+        return res.status(400).json({
+          status: "error",
+          message: "No se pudo subir el libro",
+          valid: false
+        })
+      }
+  
+      bookManagerLogger.info(`Se subio el cardBook con el ID ${data._id} con el libro ${data.books}`)
+      return res.status(200).json({
+        status: "success",
+        message: "Se subio el libro correctamente",
+        valid: true,
+        payload: {data}
       })
-    }
-
-    bookManagerLogger.info(`Se subio el cardBook con el ID ${postBookCard._id} con el libro ${postBookCard.books}`)
-    return res.status(200).json({
-      status: "success",
-      message: "Se subio el libro correctamente",
-      valid: true,
-      payload: {postBookCard}
     })
+
   }
 
   async put(req, res){
@@ -89,6 +93,8 @@ class BooksManagerController{
 
   async delete(req, res){
     const {bid} = req.params
+    const {id} = req.body;
+
     if(!bid)
     {
       bookManagerLogger.error("No se pasó el bid")
@@ -98,8 +104,7 @@ class BooksManagerController{
         valid: false
       })
     }
-
-    const deleteBookCard = await booksManagerService.delete(bid)
+    const deleteBookCard = await booksManagerService.delete(bid, id)
     if (!deleteBookCard)
     {
       bookManagerLogger.error(`No se pudo borrar el bookCard con el ID ${bid}. Error: ${deleteBookCard}`)
