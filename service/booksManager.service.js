@@ -1,5 +1,5 @@
 import { booksManagerModel } from "../DAO/models/booksManager.model.js"
-import { bookManagerLogger } from "../utils/log4js.js"
+import { bookManagerLogger, userLogger } from "../utils/log4js.js"
 import { userService } from "./user.service.js";
 
 class BooksManagerService{
@@ -8,8 +8,8 @@ class BooksManagerService{
     return booksCards
   }
 
-  async getById(){
-    const bookCard = await booksManagerModel.findById(bid).populate("books");
+  async getById(bid){
+    const bookCard = await booksManagerModel.findById(bid).populate("books").populate("owner");
     return bookCard
   }
 
@@ -29,9 +29,10 @@ class BooksManagerService{
       const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid);
       if (deleteBookCard) {
         userService.getById(user).then((user) => {
-          console.log(user.books);
           const newUser = user.books.filter((e) => e._id.toString() !== bid)
-          console.log(newUser);
+          userService.put(user, newUser).then(() => {
+            userLogger.info(`Books de usuario con el ID: ${user} actualizado`);
+          })
         })
         return true;
       } else {
@@ -43,6 +44,11 @@ class BooksManagerService{
       bookManagerLogger.error("Error al eliminar el libro:", error);
       return false;
     }
+  }
+
+  async getByUser(uid){
+    const booksCards = await booksManagerModel.find({owner: uid}).populate("owner").populate("books")
+    return booksCards
   }
 }
 

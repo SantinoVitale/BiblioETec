@@ -33,16 +33,12 @@ const userSchema = new mongoose.Schema({
     required:true,
     default: "student",
   },
-  books:{
-    type:[
+  booksCard:[
       {
-        bookRetired:{
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "booksManager"
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "booksManager"
       }
     ]
-  }
 });
 
 

@@ -65,7 +65,7 @@ class BooksManagerController{
 
     await booksManagerService.post(fechaArg, fechaMasUnaSemana, books, user)
     .then(async (data) => {
-      const userPostCard = await userService.put(user, data._id);
+      const userPostCard = await userService.postBook(user, data._id);
       if(!data || !userPostCard)
       {
         bookManagerLogger.error(`No se pudo subir el cardBook. Error: ${data}`);
@@ -120,6 +120,37 @@ class BooksManagerController{
       message: "Carta del libro borrado de la base de datos correctamente",
       payload: {deleteBookCard},
       valid: true
+    })
+  }
+
+  async getByUser(req, res){
+    const {uid} = req.params
+    if(!uid)
+    {
+      bookLogger.error("No se pasó el uid")
+      return res.status(400).json({
+        status: "error",
+        message: "No se pasó el uid",
+        valid: false
+      })
+    }
+    const bookCard = await booksManagerService.getByUser(uid)
+    if (!bookCard)
+    {
+      bookManagerLogger.error(`Hubo un error al encontrar el usuario con el ID ${uid}. Error: ${bookCard}`)
+      return res.status(400).json({
+        status: "error",
+        message: "No se ha podido traer la carta del libro correctamente",
+        valid: false
+      })
+    }
+    
+    bookManagerLogger.info(`Se encontró el libro con el ID ${uid}.`);
+    return res.status(200).json({
+      status: "success",
+      message: "Carta del libro extraido de la base de datos correctamente",
+      valid: true,
+      payload: {bookCard}
     })
   }
 }

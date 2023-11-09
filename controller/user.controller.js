@@ -73,7 +73,7 @@ class UserController{
         valid: false
       })
     }
-    jwt.sign({email: user.email, id: user._id, name: user.firstName}, config.secretJwt, {expiresIn:"1h"}, (err, token) => {
+    jwt.sign({email: user.email, id: user._id, name: user.firstName, role: user.role}, config.secretJwt, {expiresIn:"1h"}, (err, token) => {
       if(err){
         userLogger.error(err)
         throw err
