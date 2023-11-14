@@ -13,5 +13,7 @@ export default{
   mongourl: process.env.MONGO_URL,
   mongoName: process.env.MONGO_USER,
   mongoPass: process.env.MONGO_PASS,
-  secretJwt: process.env.JWT_SECRET
+  secretJwt: process.env.JWT_SECRET,
+  googleUser: process.env.GOOGLE_USER,
+  googlePass: process.env.GOOGLE_PASS
 }

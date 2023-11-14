@@ -3,6 +3,7 @@ import { userLogger } from "../utils/log4js.js";
 import { comparePassword, hashPassword } from "../utils/bcrypt.js";
 import jwt from "jsonwebtoken";
 import config from "../config/dotenv.config.js";
+import { sendMailTransport } from "../utils/mailTransport.js";
 
 class UserController{
   async register(req, res){
@@ -134,7 +135,48 @@ class UserController{
     })
   }
 
-  
+  async notifyUser(req, res){
+    const { option, user} = req.body;
+    if(!option)
+    {
+      userLogger.error(`Option is null or undefined`)
+      return res.json({
+        status: "error",
+        message: "option is null or undefined",
+        valid: false
+      })
+    }else if(option == "email")
+    {
+      await sendMailTransport.sendMail({
+        from: config.googleUser,
+        to: user.email,
+        subject: "AVISO ENTREGA DE LIBRO EXPIRADO",
+        text: "Porfavor, entregue su libro o renueve el tiempo" 
+      })
+      .then((res) => {
+        userLogger.info(`email send succesfully to ${user.email}`);
+        return res.status(200).json({
+          status: "success",
+          message: `email send succesfully to ${user.email}`,
+          valid: true,
+          payload: {res}
+        })
+      .catch((err) => {
+        userLogger.error(`An error ocurred when tried to send Email. ERROR: ${err}`)
+        return res.status(400).json({
+          status: "error",
+          message: `An error ocurred when tried to send Email. ERROR: ${err}`,
+          valid: false
+        })
+      })
+      })
+
+    } else
+    {
+      //OPCION SMS
+    }
+
+  }
 }
 
 export const userController = new UserController()
