@@ -15,5 +15,8 @@ export default{
   mongoPass: process.env.MONGO_PASS,
   secretJwt: process.env.JWT_SECRET,
   googleUser: process.env.GOOGLE_USER,
-  googlePass: process.env.GOOGLE_PASS
+  googlePass: process.env.GOOGLE_PASS,
+  twilioSID: process.env.TWILIO_SID,
+  twilioToken: process.env.TWILIO_TOKEN,
+  twilioSMS: process.env.TWILIO_PHONE
 }

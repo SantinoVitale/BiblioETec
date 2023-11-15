@@ -29,7 +29,7 @@ class BooksManagerService{
       const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid);
       if (deleteBookCard) {
         userService.getById(user).then((user) => {
-          const newUser = user.books.filter((e) => e._id.toString() !== bid)
+          const newUser = user.booksCard.filter((e) => e._id.toString() !== bid)
           userService.put(user, newUser).then(() => {
             userLogger.info(`Books de usuario con el ID: ${user} actualizado`);
           })
