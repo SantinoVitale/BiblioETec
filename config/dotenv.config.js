@@ -16,7 +16,5 @@ export default{
   secretJwt: process.env.JWT_SECRET,
   googleUser: process.env.GOOGLE_USER,
   googlePass: process.env.GOOGLE_PASS,
-  twilioSID: process.env.TWILIO_SID,
-  twilioToken: process.env.TWILIO_TOKEN,
-  twilioSMS: process.env.TWILIO_PHONE
+  apiUrl: process.env.API_URL
 }
