@@ -12,4 +12,4 @@ Una vez completada toda esta lista mostrar el estado actual del proyecto.
  - [ ] **Frontend:** Diseñar vista para ver el perfil y poder cambiarse el nombre, apellido, contraseña o curso en el que está.
  - [ ] **Backend:** CRUD para la vista de usuario.
  - [ ] **Frontend:** Revisar diseño
- - [ ] **Backend:** Agregar validacion de mail
+ - [x] **Backend:** Agregar validacion de mail

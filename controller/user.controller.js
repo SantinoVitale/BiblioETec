@@ -7,6 +7,7 @@ import { sendMailTransport } from "../utils/mailTransport.js";
 import crypto, { createHash } from "crypto";
 import { RecoverCodesMongoose } from "../DAO/models/recover-code.model.js";
 import { compare } from "bcrypt";
+import { emailTokenModel } from "../DAO/models/email-token.model.js";
 
 class UserController {
   async register(req, res) {
@@ -55,10 +56,26 @@ class UserController {
     }
 
     userLogger.info(`User created with ID: ${newUser._id}`);
+
+    const emailToken = await emailTokenModel.create({
+      userId: newUser._id,
+      token: crypto.randomBytes(32).toString("hex")
+    })
+    
+    const mail = await sendMailTransport.sendMail({
+      from: config.googleUser,
+      to: newUser.email,
+      subject: "Verificacion de Mail",
+      html: `
+          <div>
+              <a href="${config.apiUrl}/users/${newUser._id}/verify/${emailToken.token}">Click aquí para verificar la dirección de correo electrónico</a>
+          </div>
+      `,
+    });
     return res.status(200).json({
       status: "success",
-      message: "User created",
-      payload: newUser,
+      message: "Se envió un correo de verificación de Email",
+      payload: mail,
       valid: true,
     });
   }
@@ -70,7 +87,7 @@ class UserController {
       userLogger.error(`The user with the email: ${email} don´t exist`);
       return res.status(400).json({
         status: "error",
-        message: `The user with the email: ${email} don´t exist`,
+        message: `El ususuario con el Email: ${email} no existe`,
         valid: false,
       });
     }
@@ -80,7 +97,7 @@ class UserController {
       userLogger.error(`Wrong password, please try again`);
       return res.status(400).json({
         status: "error",
-        message: `Wrong password, please try again`,
+        message: `Contraseña incorrecta, por favor intente de nuevo`,
         valid: false,
       });
     }
@@ -98,10 +115,10 @@ class UserController {
           userLogger.error(err);
           throw err;
         }
-        userLogger.info(`User with the ID ${user._id} Logged correctly`);
+        userLogger.info(`El Usuario con el ID: ${user._id} Inició sesión correctamente`);
         return res.status(200).cookie("token", token).json({
           status: "success",
-          message: "User Logged",
+          message: "Usuario inició sesión",
           valid: true,
           payload: user,
         });
@@ -117,19 +134,19 @@ class UserController {
           userLogger.error(err);
           throw err;
         }
-        userLogger.info("Usuario already logged, please continue");
+        userLogger.info("Sesión todavia abierta, puede continuar");
         return res.status(200).json({
           status: "success",
-          message: "Usuario already logged, please continue",
+          message: "Sesión todavia abierta, puede continuar",
           payload: user,
           valid: true,
         });
       });
     } else {
-      userLogger.warn("User not logged, please log in");
+      userLogger.warn("El Usuario no ha iniciado sesión, por favor inicie sesión");
       return res.json({
         status: "error",
-        message: "User not logged, please log in",
+        message: "El Usuario no ha iniciado sesión, por favor inicie sesión",
         valid: false,
       });
     }
@@ -139,17 +156,17 @@ class UserController {
     const { token } = req.cookies;
 
     if (!token) {
-      userLogger.error("User try to logout without a login token");
+      userLogger.error("El Usuario intentó cerrar sesión sin un Token de sesión");
       return res.status(400).json({
         status: "error",
-        message: "User try to logout without a login token",
+        message: "El Usuario intentó cerrar sesión sin un Token de sesión",
         valid: false,
       });
     }
-    userLogger.info("User token deleted succefully");
+    userLogger.info("El Token del Usuario fue elminado con éxito");
     return res.status(200).cookie("token", "", { maxAge: 1 }).json({
       status: "success",
-      message: "User token deleted succefully",
+      message: "El Token del Usuario fue elminado con éxito",
       valid: true,
     });
   }
@@ -157,10 +174,10 @@ class UserController {
   async notifyUser(req, res) {
     const { user } = req.body;
     if (!user) {
-      userLogger.error(`Missing user`);
+      userLogger.error(`El Usuario no existe`);
       return res.json({
         status: "error",
-        message: "Missing user",
+        message: "El Usuario no existe",
         valid: false,
       });
     }
@@ -173,21 +190,21 @@ class UserController {
         text: "Porfavor, entregue su libro o renueve el tiempo",
       })
       .then((response) => {
-        userLogger.info(`email send succesfully to ${user.email}`);
+        userLogger.info(`Se ha enviado un Email a: ${user.email} correctamente`);
         return res.status(200).json({
           status: "success",
-          message: `email send succesfully to ${user.email}`,
+          message: `Se ha enviado un Email a: ${user.email} correctamente`,
           valid: true,
           payload: { response },
         });
       })
       .catch((err) => {
         userLogger.error(
-          `An error ocurred when tried to send Email. ERROR: ${err}`
+          `Ha ocurrido un error al intentar mandar un Email a ${user.email}. ERROR: ${err}`
         );
-        return res.status(400).json({
+        return res.status(500).json({
           status: "error",
-          message: `An error ocurred when tried to send Email. ERROR: ${err}`,
+          message: `Ha ocurrido un error al intentar mandar un Email a ${user.email}. ERROR: ${err}`,
           valid: false,
         });
       });
@@ -209,22 +226,22 @@ class UserController {
         subject: "Recuperar tu contraseña",
         html: `
             <div>
-                <a href="${config.apiUrl}/recover-pass?code=${code}&email=${email}">Codigo para recuperar tu contraseña: </a>${code}
+                <a href="${config.clientUrl}/recover-pass?code=${code}&email=${email}">Codigo para recuperar tu contraseña: </a>${code}
             </div>
         `,
       });
       userLogger.debug(result);
       return res.status(200).json({
         status: "success",
-        message: `email send succesfully to ${email}`,
+        message: `Email mandado a: ${email} con éxito`,
         valid: true,
         payload: { result },
       })
     }
     catch(err){
-      return res.status(400).json({
+      return res.status(500).json({
         status: "error",
-        message: `An error ocurred when tried to send Email. ERROR: ${err}`,
+        message: `Ha ocurrido un error al intentar mandar un Email a ${user.email}: ${err}`,
         valid: false,
       });
     }
@@ -243,9 +260,8 @@ class UserController {
     if (Date.now() < foundRecoverCode.expire) {
       return res.status(200).json({
         status: "success",
-        message: ``,
+        message: `El Usuario puede recuperar su contraseña`,
         valid: true,
-        payload: "",
       })
     } else {
       userLogger.error("El codigo de recuperacion está vencido");
@@ -254,9 +270,8 @@ class UserController {
         .render("error", {
           status: "error",
           title: "fecha expirada",
-          cause:
+          message:
             "Se expiró el tiempo para recuperar su contraseña, porfavor, genere otro código",
-          message: "Expirado",
         });
     }
   }
@@ -280,9 +295,8 @@ class UserController {
           .render("error", {
             status: "error",
             title: "Misma contraseña",
-            cause:
-              "La contraseña es la misma que la anterior, porfavor, cambiela",
-            message: "",
+            message:
+              "La contraseña es la misma que la anterior, porfavor, cambiela"
           });
       } else {
         const updatePassword = await userModel.updateOne(
@@ -293,9 +307,8 @@ class UserController {
 
         return res.status(200).json({
           status: "success",
-          message: ``,
-          valid: true,
-          payload: "",
+          message: `Se cambió la contraseña del usuario ${email} con éxito`,
+          valid: true
         })
       }
     } else {
@@ -305,10 +318,46 @@ class UserController {
         .render("error", {
           status: "error",
           title: "fecha expirada",
-          cause:
-            "Se expiró el tiempo para recuperar su contraseña, porfavor, genere otro código",
-          message: "Expirado",
+          message:
+            "Se expiró el tiempo para recuperar su contraseña, porfavor, genere otro código"
         });
+    }
+  }
+
+  async verifyEmail(req, res) {
+    try {
+      const user = await userModel.findOne({_id: req.params.id})
+      if(!user) return res.status(400).send({message: "Error al encontrar el Email"})
+
+      const token = await emailTokenModel.findOne({
+        userId: user._id,
+        token: req.params.token
+      })
+
+      if(!token) return res.status(400).send({message: "Error al encontrar el Token"})
+
+      await userModel.updateOne({_id: user._id, verified: true})
+      
+      
+      userLogger.debug(`Usuario con id: ${user._id} verificado`)
+
+      setTimeout(async () => {
+        await token.deleteOne({
+          userId: user._id,
+          token: req.params.token
+        })
+      }, 1000)
+
+      return res.status(200).json({
+        status: "success",
+        message: "Email verificado con éxito",
+        valid: true
+      })
+
+      
+    } catch (error){
+      userLogger.error(`Hubo un error a la hora de verificar el usuario con el id: ${req.params.id}`)
+      return res.status(500).send({message: "Internal Server Error"})
     }
   }
 }

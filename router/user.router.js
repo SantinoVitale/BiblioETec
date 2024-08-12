@@ -11,3 +11,4 @@ userRouter.post("/notify", userController.notifyUser);
 userRouter.post("/recoverPass", userController.recoverPass);
 userRouter.post("/recoverPass/getMail", userController.getMail);
 userRouter.post("/recoverPass/changePass", userController.changePass);
+userRouter.get("/:id/verify/:token", userController.verifyEmail)
