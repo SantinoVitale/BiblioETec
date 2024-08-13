@@ -92,6 +92,8 @@ class UserController {
       });
     }
 
+    if(!user.verified) return res.status(401).send({message: "El Usuario no está verificado."})
+
     const match = await comparePassword(password, user.password);
     if (!match) {
       userLogger.error(`Wrong password, please try again`);
