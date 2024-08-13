@@ -226,7 +226,7 @@ class UserController {
         subject: "Recuperar tu contraseña",
         html: `
             <div>
-                <a href="${config.clientUrl}/recover-pass?code=${code}&email=${email}">Codigo para recuperar tu contraseña: </a>${code}
+                <a href="${config.apiUrl}/recover-pass?code=${code}&email=${email}">Codigo para recuperar tu contraseña: </a>${code}
             </div>
         `,
       });
@@ -283,6 +283,9 @@ class UserController {
       code,
     });
     userLogger.debug(foundRecoverCode)
+
+    if(!foundRecoverCode) return res.status(404).send({message: "El usuario no existe"})
+
     if (Date.now() < foundRecoverCode.expire) {
       const checkUser = await userModel.findOne({ email: email });
       
@@ -304,6 +307,15 @@ class UserController {
           { password: await hashPassword(password) }
         );
         userLogger.debug(updatePassword);
+
+        setTimeout(async () => {
+          await foundRecoverCode.deleteOne({
+            email,
+            code
+          })
+        },1000)
+
+        userLogger.debug("Petición de cambiar contraseña borrada.")
 
         return res.status(200).json({
           status: "success",
