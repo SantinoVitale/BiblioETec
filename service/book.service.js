@@ -11,8 +11,8 @@ class BookService{
     return book
   }
 
-  async post(title, description, img){
-    const postBook = await bookModel.create({title, description, img})
+  async post(title, author, img, category){
+    const postBook = await bookModel.create({title, author, img, category})
     return postBook
   }
 
@@ -22,8 +22,8 @@ class BookService{
   }
 
   async put(bid, info){
-    const { title, description, img} = info
-    const putBook = await bookModel.updateOne({_id: bid}, {title: title, description: description, img: img})
+    const { title, author, img, category} = info
+    const putBook = await bookModel.updateOne({_id: bid}, {title: title, author: author, img: img, category: category})
     return putBook
   }
 
