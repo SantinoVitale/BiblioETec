@@ -13,11 +13,11 @@ class UserService{
             return user;
         } catch (error) {
             console.error("Error en getById:", error);
-            throw error; // Puedes manejar el error según tus necesidades
+            return error
         }
     }
 
-    async put(uid, data){
+    async putBook(uid, data){
         const user = await userService.getById(uid);
         if(!user){
             userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid);
@@ -26,6 +26,22 @@ class UserService{
         
         const put = await userModel.findByIdAndUpdate(uid, {booksCard: data})
         return put;
+    }
+
+    async putUser(uid, data){
+        const user = await userService.getById(uid);
+        if(!user){
+            userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid);
+            return false
+        }
+        
+        try {
+            const put = await userModel.findByIdAndUpdate(uid, data)
+            return put;
+        } catch (error){
+            userLogger(error)
+            return error
+        }
     }
 
     async postBook(uid, bmid){

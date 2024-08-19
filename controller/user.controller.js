@@ -8,6 +8,7 @@ import crypto, { createHash } from "crypto";
 import { RecoverCodesMongoose } from "../DAO/models/recover-code.model.js";
 import { compare } from "bcrypt";
 import { emailTokenModel } from "../DAO/models/email-token.model.js";
+import { userService } from "../service/user.service.js";
 
 class UserController {
   async register(req, res) {
@@ -107,7 +108,10 @@ class UserController {
       {
         email: user.email,
         id: user._id,
-        name: user.firstName,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        course: user.course,
+        phone: user.phone,
         role: user.role,
       },
       config.secretJwt,
@@ -373,6 +377,48 @@ class UserController {
       userLogger.error(`Hubo un error a la hora de verificar el usuario con el id: ${req.params.id}`)
       return res.status(500).send({message: "Internal Server Error"})
     }
+  }
+
+  async getUserById (req, res) {
+    const { uid } = req.params
+
+    if(!uid) return res.status(400).send("Usuario inexistente")
+
+    userService.getById(uid)
+    .then((data) => {
+      userLogger.debug(`Se trajo el usuario con el ID: ${data._id}`)
+      return res.status(200).json({
+        status: "success",
+        valid: true,
+        payload: data
+      })
+    })
+    .catch((err) => {
+      userLogger.error(err)
+      return res.status(500).send("Error con el servidor para traer el usuario")
+    })
+  }
+
+  async put (req, res) {
+    const { uid } = req.params
+
+    userService.putUser(uid, req.body)
+    .then((data) => {
+      return res.status(200).json({
+        status: "success",
+        message: "Usuario actualizado con éxito",
+        valid: true,
+        payload: data
+      })
+    })
+    .catch((err) => {
+      return res.status(500).json({
+        status: "error",
+        message: "Hubo un problema a la hora de actualizar el usuario",
+        error: err,
+        valid: false
+      })
+    })
   }
 }
 
