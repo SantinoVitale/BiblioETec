@@ -9,8 +9,8 @@ Una vez completada toda esta lista mostrar el estado actual del proyecto.
  - [x] **Backend:** Una vez enviado el formulario tomar el mail y agregarle la extencion correspondiente.
  - [x] **Frontend:** Diseñar vista para administrar libros (agregar, modificar y eliminar libros).
  - [x] **Backend:** Programar el CRUD para administar libros.
- - [ ] **Frontend:** Diseñar vista para ver el perfil y poder cambiarse el nombre, apellido, contraseña o curso en el que está.
- - [ ] **Backend:** CRUD para la vista de usuario.
+ - [x] **Frontend:** Diseñar vista para ver el perfil y poder cambiarse el nombre, apellido, contraseña o curso en el que está.
+ - [x] **Backend:** CRUD para la vista de usuario.
  - [ ] **Frontend:** Revisar diseño
  - [x] **Backend:** Agregar validacion de mail
  - [ ] **Frontend/Backend:** Revisar manejo de errores y respuestas del servidor
