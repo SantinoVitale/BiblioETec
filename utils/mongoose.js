@@ -8,7 +8,7 @@ export async function connectMongo() {
   try {
     mongoose.set("strictQuery", false);
     await mongoose.connect(mongoURL);
-    databaseLogger.debug("¡Conectado pa!");
+    databaseLogger.debug("¡Conectado!");
   } catch (error) {
     databaseLogger.error(error);
   }

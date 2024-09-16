@@ -13,4 +13,4 @@ Una vez completada toda esta lista mostrar el estado actual del proyecto.
  - [x] **Backend:** CRUD para la vista de usuario.
  - [x] **Frontend:** Revisar diseño
  - [x] **Backend:** Agregar validacion de mail
- - [ ] **Frontend/Backend:** Revisar manejo de errores y respuestas del servidor
+ - [x] **Frontend/Backend:** Revisar manejo de errores y respuestas del servidor

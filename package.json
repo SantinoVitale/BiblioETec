@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "nodemon app.js",
-    "devel": "nodemon app.js --mode DEVELOPMENT"
+    "devel": "nodemon app.js --mode DEVELOPMENT",
+    "start": "nodemon app.js --mode PRODUCTION"
   },
   "repository": {
     "type": "git",
