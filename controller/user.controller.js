@@ -21,8 +21,7 @@ class UserController {
       !password ||
       !email
     ) {
-      userLogger.error("Missing values");
-      return res.status(200).json({
+      return res.status(406).json({
         status: "error",
         message: "missing values",
         valid: false,
@@ -31,10 +30,10 @@ class UserController {
 
     const existEmail = await userModel.findOne({ email: email });
     if (existEmail) {
-      userLogger.error("The email is already register in a account");
-      return res.status(400).json({
+      userLogger.error("Ya existe un usuario con este mail");
+      return res.status(412).json({
         status: "error",
-        message: "The email is already register in a account",
+        message: "Ya existe un usuario con este mail",
         valid: false,
       });
     }
@@ -48,15 +47,15 @@ class UserController {
       email,
     });
     if (!newUser) {
-      userLogger.error("Something went wrong");
-      return res.status(400).json({
+      userLogger.error(newUser);
+      return res.status(502).json({
         status: "error",
-        message: "something went wrong",
+        message: "Ocurrió algo al crear el usuario",
         valid: false,
       });
     }
 
-    userLogger.info(`User created with ID: ${newUser._id}`);
+    userLogger.info(`Se creó el usuario con el ID: ${newUser._id}`);
 
     const emailToken = await emailTokenModel.create({
       userId: newUser._id,
@@ -85,8 +84,8 @@ class UserController {
     const { email, password } = req.body;
     const user = await userModel.findOne({ email });
     if (!user) {
-      userLogger.error(`The user with the email: ${email} don´t exist`);
-      return res.status(400).json({
+      userLogger.error(`El usuario con el email: ${email} no existe`);
+      return res.status(404).json({
         status: "error",
         message: `El ususuario con el Email: ${email} no existe`,
         valid: false,
@@ -97,7 +96,7 @@ class UserController {
 
     const match = await comparePassword(password, user.password);
     if (!match) {
-      userLogger.error(`Wrong password, please try again`);
+      userLogger.error(`Contraseña incorrecta, intente de nuevo`);
       return res.status(400).json({
         status: "error",
         message: `Contraseña incorrecta, por favor intente de nuevo`,
@@ -163,7 +162,7 @@ class UserController {
 
     if (!token) {
       userLogger.error("El Usuario intentó cerrar sesión sin un Token de sesión");
-      return res.status(400).json({
+      return res.status(401).json({
         status: "error",
         message: "El Usuario intentó cerrar sesión sin un Token de sesión",
         valid: false,
@@ -180,7 +179,6 @@ class UserController {
   async notifyUser(req, res) {
     const { user } = req.body;
     if (!user) {
-      userLogger.error(`El Usuario no existe`);
       return res.json({
         status: "error",
         message: "El Usuario no existe",
@@ -205,9 +203,7 @@ class UserController {
         });
       })
       .catch((err) => {
-        userLogger.error(
-          `Ha ocurrido un error al intentar mandar un Email a ${user.email}. ERROR: ${err}`
-        );
+        userLogger.error(`Ha ocurrido un error al intentar mandar un Email a ${user.email}. ERROR: ${err}`);
         return res.status(500).json({
           status: "error",
           message: `Ha ocurrido un error al intentar mandar un Email a ${user.email}. ERROR: ${err}`,
@@ -224,7 +220,6 @@ class UserController {
       code,
       expire: Date.now() + 10 * 60 * 1000,
     });
-    userLogger.debug(createdRecoverCodes);
     try{
       const result = await sendMailTransport.sendMail({
         from: config.googleUser,
@@ -236,7 +231,6 @@ class UserController {
             </div>
         `,
       });
-      userLogger.debug(result);
       return res.status(200).json({
         status: "success",
         message: `Email mandado a: ${email} con éxito`,
@@ -245,7 +239,7 @@ class UserController {
       });
     }
     catch(err){
-      return res.status(500).json({
+      return res.status(502).json({
         status: "error",
         message: `Ha ocurrido un error al intentar mandar un Email a ${user.email}: ${err}`,
         valid: false,
@@ -260,7 +254,6 @@ class UserController {
       email,
       code,
     });
-    userLogger.debug(foundRecoverCode);
     
     if (Date.now() < foundRecoverCode.expire) {
       return res.status(200).json({
@@ -269,9 +262,9 @@ class UserController {
         valid: true,
       })
     } else {
-      userLogger.error("El codigo de recuperacion está vencido");
+      userLogger.error(`El codigo de recuperacion del usuario: ${email} está vencido`);
       return res
-        .status(400)
+        .status(401)
         .render("error", {
           status: "error",
           title: "fecha expirada",
@@ -294,9 +287,9 @@ class UserController {
       const checkUser = await userModel.findOne({ email: email });
       
       if (await compare(password, checkUser.password)) {
-        userLogger.error("La contraseña nueva es la misma que la anterior, porfavor cambiela");
+        userLogger.error(`La contraseña para el usuario: ${email} nueva es la misma que la anterior, porfavor cambiela`);
         return res
-          .status(400)
+          .status(401)
           .render("error", {
             status: "error",
             title: "Misma contraseña",
@@ -304,7 +297,7 @@ class UserController {
               "La contraseña es la misma que la anterior, porfavor, cambiela"
           });
       } else {
-        const updatePassword = await userModel.updateOne(
+        await userModel.updateOne(
           { email: email },
           { password: await hashPassword(password) }
         );
@@ -314,7 +307,7 @@ class UserController {
             code
           });
         },1000);
-        userLogger.debug("Petición de cambiar contraseña borrada.");
+        userLogger.debug(`Petición de cambiar contraseña para el usuario ${email} borrada.`);
         return res.status(200).json({
           status: "success",
           message: `Se cambió la contraseña del usuario ${email} con éxito`,
@@ -322,9 +315,9 @@ class UserController {
         });
       }
     } else {
-      userLogger.error("El codigo de recuperacion está vencido");
+      userLogger.error(`El codigo de recuperacion del usuario: ${gmail} está vencido`);
       return res
-        .status(400)
+        .status(401)
         .render("error", {
           status: "error",
           title: "fecha expirada",
@@ -337,18 +330,16 @@ class UserController {
   async verifyEmail(req, res) {
     try {
       const user = await userModel.findOne({_id: req.params.id});
-      if(!user) return res.status(400).send({message: "Error al encontrar el Email"});
+      if(!user) return res.status(502).send({message: "Error al encontrar el Email"});
 
       const token = await emailTokenModel.findOne({
         userId: user._id,
         token: req.params.token
       });
 
-      if(!token) return res.status(400).send({message: "Error al encontrar el Token"});
+      if(!token) return res.status(502).send({message: "Error al encontrar el Token"});
 
       await userModel.updateOne({_id: user._id, verified: true});
-      
-      
       userLogger.debug(`Usuario con id: ${user._id} verificado`);
 
       setTimeout(async () => {
@@ -374,7 +365,7 @@ class UserController {
   async getUserById (req, res) {
     const { uid } = req.params;
 
-    if(!uid) return res.status(400).send("Usuario inexistente");
+    if(!uid) return res.status(404).send("Usuario inexistente");
 
     userService.getById(uid)
     .then((data) => {

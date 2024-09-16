@@ -18,8 +18,7 @@ class BooksManagerController{
     const {bid} = req.params;
     if(!bid)
     {
-      bookLogger.error("No se pasó el bid");
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pasó el bid",
         valid: false
@@ -30,7 +29,7 @@ class BooksManagerController{
     if (!bookCard)
     {
       bookManagerLogger.error(`Hubo un error al encontrar el libro con el ID ${bid}. Error: ${bookCard}`);
-      return res.status(400).json({
+      return res.status(502).json({
         status: "error",
         message: "No se ha podido traer la carta del libro correctamente",
         valid: false
@@ -55,8 +54,7 @@ class BooksManagerController{
 
     if (!user || !books)
     {
-      bookManagerLogger.error(`Faltó alguno de los 2 campos. Campo user: ${user}, books: ${books}`);
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pudo subir el libro debido a que faltan datos",
         valid: false
@@ -69,7 +67,7 @@ class BooksManagerController{
       if(!data || !userPostCard)
       {
         bookManagerLogger.error(`No se pudo subir el cardBook. Error: ${data}`);
-        return res.status(400).json({
+        return res.status(502).json({
           status: "error",
           message: "No se pudo subir el libro",
           valid: false
@@ -93,8 +91,7 @@ class BooksManagerController{
 
     if(!bid)
     {
-      bookManagerLogger.error("No se pasó el bid");
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pasó el bid",
         valid: false
@@ -104,7 +101,7 @@ class BooksManagerController{
     if (!deleteBookCard)
     {
       bookManagerLogger.error(`No se pudo borrar el bookCard con el ID ${bid}. Error: ${deleteBookCard}`);
-      return res.status(400).json({
+      return res.status(502).json({
         status: "error",
         message: "No se ha podido borrar la carta del libro correctamente",
         valid: false
@@ -123,8 +120,7 @@ class BooksManagerController{
     const {uid} = req.params;
     if(!uid)
     {
-      bookLogger.error("No se pasó el uid");
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pasó el uid",
         valid: false
@@ -134,7 +130,7 @@ class BooksManagerController{
     if (!bookCard)
     {
       bookManagerLogger.error(`Hubo un error al encontrar el usuario con el ID ${uid}. Error: ${bookCard}`);
-      return res.status(400).json({
+      return res.status(502).json({
         status: "error",
         message: "No se ha podido traer la carta del libro correctamente",
         valid: false

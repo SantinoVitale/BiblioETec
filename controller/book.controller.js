@@ -7,7 +7,7 @@ class BookController {
     if(!books)
     {
       bookLogger.error("Hubo un error a la hora de traer los libros");
-      return res.status(400).json({
+      return res.status(502).json({
         status: "error",
         message: "Hubo un error a la hora de traer los libros",
         valid: false
@@ -29,8 +29,7 @@ class BookController {
     const {bid} = req.params;
     if(!bid)
     {
-      bookLogger.error("No se pasó el bid")
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pasó el bid",
         valid: false
@@ -40,7 +39,7 @@ class BookController {
     if (!book)
     {
       bookLogger.error("No se ha podido traer el libro correctamente")
-      return res.status(400).json({
+      return res.status(502).json({
       status: "error",
       message: "No se ha podido traer el libro correctamente",
       valid: false
@@ -57,8 +56,7 @@ class BookController {
   async post(req, res) {
     const {title, author, category, img} = req.body;
     if (!title || !author || !img || !category){
-      bookLogger.error("Faltó alguno de los 4 campos");
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pudo subir el libro debido a que faltan datos",
         valid: false
@@ -70,7 +68,7 @@ class BookController {
     if(!postBook)
     {
       bookLogger.error("hubo un problema a la hora de subir el libro, error: ", postBook);
-      return res.status(500).json({
+      return res.status(502).json({
         status: "error",
         message: "No se pudo subir el libro",
         valid: false
@@ -106,8 +104,7 @@ class BookController {
     const {bid} = req.params;
     if(!bid)
     {
-      bookLogger.error("No se pasó el bid");
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pasó el bid",
         valid: false
@@ -119,7 +116,7 @@ class BookController {
     if (!putBook)
     {
       bookLogger.error("No se pudo actualizar el libro. Error: ", putBook);
-      return res.status(400).json({
+      return res.status(502).json({
       status: "error",
       message: "No se pudo actualizar el libro",
       valid: false
@@ -140,8 +137,7 @@ class BookController {
     const {bid} = req.params;
     if(!bid)
     {
-      bookLogger.error("No se pasó el bid");
-      return res.status(400).json({
+      return res.status(406).json({
         status: "error",
         message: "No se pasó el bid",
         valid: false
@@ -153,7 +149,7 @@ class BookController {
     if (!deleteBook)
     {
       bookLogger.error("No se pudo borrar el libro, Error: ", deleteBook);
-      return res.status(400).json({
+      return res.status(502).json({
       status: "error",
       message: "No se ha podido borrar el libro",
       valid: false
