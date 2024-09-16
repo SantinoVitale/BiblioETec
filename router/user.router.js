@@ -14,3 +14,4 @@ userRouter.post("/recoverPass/changePass", userController.changePass);
 userRouter.get("/:id/verify/:token", userController.verifyEmail)
 userRouter.get("/:uid", userController.getUserById)
 userRouter.put("/edit/:uid", userController.put)
+userRouter.delete("/delete/:uid", userController.delete)

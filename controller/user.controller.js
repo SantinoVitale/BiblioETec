@@ -420,6 +420,29 @@ class UserController {
       })
     })
   }
+
+  async delete(req, res){
+    const {uid} = req.params;
+    
+    userService.delete(uid)
+    .then((data) => {
+      userLogger.debug(`Se eleminó el usuario con el ID: ${data._id}`)
+      return res.status(201).json({
+        status: "success",
+        message: "Usuario eliminado con exito",
+        valid: true,
+        payload: data
+      })
+    })
+    .catch((err) => {
+      return res.status(500).json({
+        status: "error",
+        message: "Hubo un problema a la hora de actualizar el usuario",
+        error: err,
+        valid: false
+      })
+    })
+  }
 }
 
 export const userController = new UserController();

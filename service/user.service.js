@@ -54,6 +54,16 @@ class UserService{
         const put = await userModel.findByIdAndUpdate(uid, user)
         return put;
     }
+
+    async delete(uid){
+        const user = await userService.getById(uid)
+        if(!user){
+            userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid)
+            return false
+        }
+        const deleteUser = await userModel.findByIdAndDelete(uid);
+        return deleteUser;
+    }
 }
 
 export const userService = new UserService();
