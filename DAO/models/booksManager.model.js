@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const bookManagerCollection = "booksManager"
+const bookManagerCollection = "booksManager";
 
 const booksManagerSchema = new mongoose.Schema({
   owner: {
@@ -17,4 +17,4 @@ const booksManagerSchema = new mongoose.Schema({
   }
 })
 
-export const booksManagerModel = mongoose.model(bookManagerCollection, booksManagerSchema)
+export const booksManagerModel = mongoose.model(bookManagerCollection, booksManagerSchema);

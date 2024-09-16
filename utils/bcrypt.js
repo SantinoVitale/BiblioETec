@@ -8,9 +8,9 @@ export const hashPassword = (pass) => {
       
       bcrypt.hash(pass, salt, (err, hash) => {
         if(err)
-          reject(err)
+          reject(err);
 
-        resolve(hash)
+        resolve(hash);
       })
     })
   })

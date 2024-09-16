@@ -1,26 +1,26 @@
-import { booksManagerModel } from "../DAO/models/booksManager.model.js"
-import { bookManagerLogger, userLogger } from "../utils/log4js.js"
+import { booksManagerModel } from "../DAO/models/booksManager.model.js";
+import { bookManagerLogger, userLogger } from "../utils/log4js.js";
 import { userService } from "./user.service.js";
 
 class BooksManagerService{
   async get(){
     const booksCards = await booksManagerModel.find().populate("books").populate("owner");
-    return booksCards
+    return booksCards;
   }
 
   async getById(bid){
     const bookCard = await booksManagerModel.findById(bid).populate("books").populate("owner");
-    return bookCard
+    return bookCard;
   }
 
   async post(date, expireDate, book, user){
-    const postBook = await booksManagerModel.create({retiredDate: date, expireDate: expireDate, books: book, owner: user})
-    return postBook
+    const postBook = await booksManagerModel.create({retiredDate: date, expireDate: expireDate, books: book, owner: user});
+    return postBook;
   }
 
   async put(bid, info){
     const { bookId } = info;
-    const putBookCard = await booksManagerModel.updateOne({_id: bid}, {book: bookId})
+    const putBookCard = await booksManagerModel.updateOne({_id: bid}, {book: bookId});
     return putBookCard
   }
 
@@ -29,7 +29,7 @@ class BooksManagerService{
       const deleteBookCard = await booksManagerModel.findByIdAndDelete(bid);
       if (deleteBookCard) {
         userService.getById(user).then((user) => {
-          const newUser = user.booksCard.filter((e) => e._id.toString() !== bid)
+          const newUser = user.booksCard.filter((e) => e._id.toString() !== bid);
           userService.put(user, newUser).then(() => {
             userLogger.info(`Books de usuario con el ID: ${user} actualizado`);
           })
@@ -47,9 +47,9 @@ class BooksManagerService{
   }
 
   async getByUser(uid){
-    const booksCards = await booksManagerModel.find({owner: uid}).populate("owner").populate("books")
-    return booksCards
+    const booksCards = await booksManagerModel.find({owner: uid}).populate("owner").populate("books");
+    return booksCards;
   }
 }
 
-export const booksManagerService = new BooksManagerService()
+export const booksManagerService = new BooksManagerService();

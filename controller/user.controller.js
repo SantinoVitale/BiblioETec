@@ -61,7 +61,7 @@ class UserController {
     const emailToken = await emailTokenModel.create({
       userId: newUser._id,
       token: crypto.randomBytes(32).toString("hex")
-    })
+    });
     
     const mail = await sendMailTransport.sendMail({
       from: config.googleUser,
@@ -93,7 +93,7 @@ class UserController {
       });
     }
 
-    if(!user.verified) return res.status(401).send({message: "El Usuario no está verificado."})
+    if(!user.verified) return res.status(401).send({message: "El Usuario no está verificado."});
 
     const match = await comparePassword(password, user.password);
     if (!match) {
@@ -242,7 +242,7 @@ class UserController {
         message: `Email mandado a: ${email} con éxito`,
         valid: true,
         payload: { result },
-      })
+      });
     }
     catch(err){
       return res.status(500).json({
@@ -255,13 +255,12 @@ class UserController {
 
   async getMail(req, res) {
     const { code, email } = req.body;
-    console.log(req.body);
     
     const foundRecoverCode = await RecoverCodesMongoose.findOne({
       email,
       code,
     });
-    userLogger.debug(foundRecoverCode)
+    userLogger.debug(foundRecoverCode);
     
     if (Date.now() < foundRecoverCode.expire) {
       return res.status(200).json({
@@ -288,17 +287,14 @@ class UserController {
       email,
       code,
     });
-    userLogger.debug(foundRecoverCode)
 
-    if(!foundRecoverCode) return res.status(404).send({message: "El usuario no existe"})
+    if(!foundRecoverCode) return res.status(404).send({message: "El usuario no existe"});
 
     if (Date.now() < foundRecoverCode.expire) {
       const checkUser = await userModel.findOne({ email: email });
       
       if (await compare(password, checkUser.password)) {
-        userLogger.error(
-          "La contraseña nueva es la misma que la anterior, porfavor cambiela"
-        );
+        userLogger.error("La contraseña nueva es la misma que la anterior, porfavor cambiela");
         return res
           .status(400)
           .render("error", {
@@ -312,22 +308,18 @@ class UserController {
           { email: email },
           { password: await hashPassword(password) }
         );
-        userLogger.debug(updatePassword);
-
         setTimeout(async () => {
           await foundRecoverCode.deleteOne({
             email,
             code
-          })
-        },1000)
-
-        userLogger.debug("Petición de cambiar contraseña borrada.")
-
+          });
+        },1000);
+        userLogger.debug("Petición de cambiar contraseña borrada.");
         return res.status(200).json({
           status: "success",
           message: `Se cambió la contraseña del usuario ${email} con éxito`,
           valid: true
-        })
+        });
       }
     } else {
       userLogger.error("El codigo de recuperacion está vencido");
@@ -344,63 +336,63 @@ class UserController {
 
   async verifyEmail(req, res) {
     try {
-      const user = await userModel.findOne({_id: req.params.id})
-      if(!user) return res.status(400).send({message: "Error al encontrar el Email"})
+      const user = await userModel.findOne({_id: req.params.id});
+      if(!user) return res.status(400).send({message: "Error al encontrar el Email"});
 
       const token = await emailTokenModel.findOne({
         userId: user._id,
         token: req.params.token
-      })
+      });
 
-      if(!token) return res.status(400).send({message: "Error al encontrar el Token"})
+      if(!token) return res.status(400).send({message: "Error al encontrar el Token"});
 
-      await userModel.updateOne({_id: user._id, verified: true})
+      await userModel.updateOne({_id: user._id, verified: true});
       
       
-      userLogger.debug(`Usuario con id: ${user._id} verificado`)
+      userLogger.debug(`Usuario con id: ${user._id} verificado`);
 
       setTimeout(async () => {
         await token.deleteOne({
           userId: user._id,
           token: req.params.token
-        })
-      }, 1000)
+        });
+      }, 1000);
 
       return res.status(200).json({
         status: "success",
         message: "Email verificado con éxito",
         valid: true
-      })
+      });
 
       
     } catch (error){
-      userLogger.error(`Hubo un error a la hora de verificar el usuario con el id: ${req.params.id}`)
-      return res.status(500).send({message: "Internal Server Error"})
+      userLogger.error(`Hubo un error a la hora de verificar el usuario con el id: ${req.params.id}`);
+      return res.status(500).send({message: "Internal Server Error"});
     }
   }
 
   async getUserById (req, res) {
-    const { uid } = req.params
+    const { uid } = req.params;
 
-    if(!uid) return res.status(400).send("Usuario inexistente")
+    if(!uid) return res.status(400).send("Usuario inexistente");
 
     userService.getById(uid)
     .then((data) => {
-      userLogger.debug(`Se trajo el usuario con el ID: ${data._id}`)
+      userLogger.debug(`Se trajo el usuario con el ID: ${data._id}`);
       return res.status(200).json({
         status: "success",
         valid: true,
         payload: data
-      })
+      });
     })
     .catch((err) => {
-      userLogger.error(err)
-      return res.status(500).send("Error con el servidor para traer el usuario")
-    })
+      userLogger.error(err);
+      return res.status(500).send("Error con el servidor para traer el usuario");
+    });
   }
 
   async put (req, res) {
-    const { uid } = req.params
+    const { uid } = req.params;
 
     userService.putUser(uid, req.body)
     .then((data) => {
@@ -409,7 +401,7 @@ class UserController {
         message: "Usuario actualizado con éxito",
         valid: true,
         payload: data
-      })
+      });
     })
     .catch((err) => {
       return res.status(500).json({
@@ -417,7 +409,7 @@ class UserController {
         message: "Hubo un problema a la hora de actualizar el usuario",
         error: err,
         valid: false
-      })
+      });
     })
   }
 
@@ -432,7 +424,7 @@ class UserController {
         message: "Usuario eliminado con exito",
         valid: true,
         payload: data
-      })
+      });
     })
     .catch((err) => {
       return res.status(500).json({
@@ -440,8 +432,8 @@ class UserController {
         message: "Hubo un problema a la hora de actualizar el usuario",
         error: err,
         valid: false
-      })
-    })
+      });
+    });
   }
 }
 

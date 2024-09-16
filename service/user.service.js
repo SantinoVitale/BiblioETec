@@ -13,7 +13,7 @@ class UserService{
             return user;
         } catch (error) {
             console.error("Error en getById:", error);
-            return error
+            return error;
         }
     }
 
@@ -21,10 +21,10 @@ class UserService{
         const user = await userService.getById(uid);
         if(!user){
             userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid);
-            return false
+            return false;
         }
         
-        const put = await userModel.findByIdAndUpdate(uid, {booksCard: data})
+        const put = await userModel.findByIdAndUpdate(uid, {booksCard: data});
         return put;
     }
 
@@ -32,15 +32,15 @@ class UserService{
         const user = await userService.getById(uid);
         if(!user){
             userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid);
-            return false
+            return false;
         }
         
         try {
-            const put = await userModel.findByIdAndUpdate(uid, data)
+            const put = await userModel.findByIdAndUpdate(uid, data);
             return put;
         } catch (error){
-            userLogger(error)
-            return error
+            userLogger(error);
+            return error;
         }
     }
 
@@ -48,18 +48,18 @@ class UserService{
         const user = await userService.getById(uid);
         if(!user){
             userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid);
-            return false
+            return false;
         }
-        user.booksCard.push(bmid)
-        const put = await userModel.findByIdAndUpdate(uid, user)
+        user.booksCard.push(bmid);
+        const put = await userModel.findByIdAndUpdate(uid, user);
         return put;
     }
 
     async delete(uid){
-        const user = await userService.getById(uid)
+        const user = await userService.getById(uid);
         if(!user){
-            userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid)
-            return false
+            userLogger.error("Hubo un error a la hora de traer el usuario con el ID: ", uid);
+            return false;
         }
         const deleteUser = await userModel.findByIdAndDelete(uid);
         return deleteUser;

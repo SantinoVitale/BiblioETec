@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const bookCollection = "books"
+const bookCollection = "books";
 
 const bookSchema = new mongoose.Schema({
   title: {type: String, required: true},
@@ -10,4 +10,4 @@ const bookSchema = new mongoose.Schema({
 })
 
 
-export const bookModel = mongoose.model(bookCollection, bookSchema)
+export const bookModel = mongoose.model(bookCollection, bookSchema);

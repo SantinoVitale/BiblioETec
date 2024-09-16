@@ -16,10 +16,10 @@ app.use(cors({
   credentials: true,
 }))
 app.use(express.json());
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
-const port = config.port
+const port = config.port;
 
 // * CONEXIÓN A MONGO
 connectMongo();
@@ -27,9 +27,9 @@ connectMongo();
 // * ROUTERS
 app.use("/api/books", bookRouter);
 app.use("/api/booksManager", booksManagerRouter);
-app.use("/api/users", userRouter)
+app.use("/api/users", userRouter);
 
 
 app.listen(port, () => {
-  defaultlogger.debug("Server escuchando en el puerto ", port)
+  defaultlogger.debug("Server escuchando en el puerto ", port);
 })
