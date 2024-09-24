@@ -33,14 +33,12 @@ Creado por Santino Vitale.
 2. Una vez instalada las dependencias, se configura el .env.sample para ajustarse a su configuracion de servidor y BDD :
 
 	
-
-    	MONGO_PASS= <<<PASSWORD DE MONGO>>>
-    	MONGO_URL= <<<URL DE MONGO>>>
+    	MONGO_URL= <<<URL DE MONGO>>> // URL de la conexión a mongo ya sea local o en la nube con el usuario y contraseña
     	PORT= <<<PUERTO DEL BACKEND>>>
-    	JWT_SECRET= <<<PASSWORD DE JWT>>>
+    	JWT_SECRET= <<<PASSWORD DE JWT>>> // password para el token que usaran los usuarios al navegar en la pagina
     	GOOGLE_USER = <<<GMAIL DEL USUARIO>>>
-    	GOOGLE_PASS = <<<PASSWORD DEL USUARIO DE GMAIL>>>
-    	API_URL = <<<URL DE REDIRECCION>>>
+    	GOOGLE_PASS = <<<PASSWORD DEL USUARIO DE GMAIL>>> // Password que se genera una vez creada contraseña de aplicacion para el google
+    	API_URL = <<<URL DE REDIRECCION>>> // URL que usaran en el mail para redirigir al FRONTEND de la página
 
 3. Una vez configurado el .env.sample, se le cambia el nombre a .env.development.local para entorno de desarrollo o .env.production.local para entorno de producción.
 
