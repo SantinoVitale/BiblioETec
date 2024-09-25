@@ -7,6 +7,8 @@ import cors from "cors";
 import { defaultlogger } from "./utils/log4js.js";
 import { userRouter } from "./router/user.router.js";
 import cookieParser from "cookie-parser";
+import cron from "node-cron"
+import { userModel } from "./DAO/models/user.model.js";
 
 
 // * CONFIGURACION EXPRESS
@@ -32,4 +34,13 @@ app.use("/api/users", userRouter);
 
 app.listen(port, () => {
   defaultlogger.debug("Server escuchando en el puerto ", port);
+})
+
+// * CRON PARA ELIMINAR USUARIOS EXPIRADOS
+
+cron.schedule('*/1 * * * *', async () => {
+  const now = Date.now();
+  const deleteUsersExpire = await userModel.deleteMany({ verificationExpires: { $lt: now }, verified: false });
+  
+  defaultlogger.info('Usuarios eliminados:', deleteUsersExpire);
 })

@@ -15,6 +15,10 @@ export const emailTokenModel = model("email-tokens", new Schema({
     type: Date,
     default: Date.now(),
     expires: 3600 // 1 Hour
+  },
+  expiry:{
+    type: Date,
+    required: true
   }
 })
 );
