@@ -45,7 +45,7 @@ class UserController {
       phone,
       password: hashedPassword,
       email,
-      verificationExpires: Date.now() + 60000 // 1 hora
+      verificationExpires: Date.now() + 3600000 // 1 hora
     });
     if (!newUser) {
       userLogger.error(newUser);
@@ -61,7 +61,7 @@ class UserController {
     const emailToken = await emailTokenModel.create({
       userId: newUser._id,
       token: crypto.randomBytes(32).toString("hex"),
-      expiry: new Date(Date.now() + 60000) // 1 hora 
+      expiry: new Date(Date.now() + 3600000) // 1 hora 
     });
     
     const mail = await sendMailTransport.sendMail({
@@ -340,7 +340,7 @@ class UserController {
       });
 
       if(!token) return res.status(502).send({message: "Error al encontrar el Token"});
-      if (mailToken.expiry < Date.now()) { // Token expirado, borra el usuario y el token
+      if (token.expiry < Date.now()) { // Token expirado, borra el usuario y el token
         await userModel.findByIdAndDelete(token.userId);
         await emailTokenModel.findByIdAndDelete(token._id);
         return res.status(400).send('El token ha expirado. El usuario ha sido eliminado.');

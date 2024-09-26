@@ -14,7 +14,7 @@ import { userModel } from "./DAO/models/user.model.js";
 // * CONFIGURACION EXPRESS
 const app = express();
 app.use(cors({
-  origin: "http://localhost:3000", // Reemplaza con tu origen
+  origin: "http://192.168.40.235:3000", // Reemplaza con tu origen
   credentials: true,
 }))
 app.use(express.json());
@@ -38,9 +38,9 @@ app.listen(port, () => {
 
 // * CRON PARA ELIMINAR USUARIOS EXPIRADOS
 
-cron.schedule('*/1 * * * *', async () => {
+cron.schedule('*/15 * * * *', async () => {
   const now = Date.now();
   const deleteUsersExpire = await userModel.deleteMany({ verificationExpires: { $lt: now }, verified: false });
   
   defaultlogger.info('Usuarios eliminados:', deleteUsersExpire);
-})
+}) 
