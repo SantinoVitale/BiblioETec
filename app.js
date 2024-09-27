@@ -9,6 +9,7 @@ import { userRouter } from "./router/user.router.js";
 import cookieParser from "cookie-parser";
 import cron from "node-cron"
 import { userModel } from "./DAO/models/user.model.js";
+import { RecoverCodesMongoose } from "./DAO/models/recover-code.model.js";
 
 
 // * CONFIGURACION EXPRESS
@@ -41,6 +42,7 @@ app.listen(port, () => {
 cron.schedule('*/15 * * * *', async () => {
   const now = Date.now();
   const deleteUsersExpire = await userModel.deleteMany({ verificationExpires: { $lt: now }, verified: false });
-  
+  const deletePassExpire = await RecoverCodesMongoose.deleteMany({ expire: { $lt: now } });
   defaultlogger.info('Usuarios eliminados:', deleteUsersExpire);
+  defaultlogger.info('Codigos de contraseña eliminados:', deletePassExpire);
 }) 

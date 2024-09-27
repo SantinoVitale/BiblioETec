@@ -36,7 +36,7 @@ class UserService{
         }
         
         try {
-            const put = await userModel.findByIdAndUpdate(uid, data);
+            const put = await userModel.findByIdAndUpdate({_id: uid}, { $set: {data } });
             return put;
         } catch (error){
             userLogger.error(error);

@@ -9,6 +9,8 @@ import { RecoverCodesMongoose } from "../DAO/models/recover-code.model.js";
 import { compare } from "bcrypt";
 import { emailTokenModel } from "../DAO/models/email-token.model.js";
 import { userService } from "../service/user.service.js";
+import { booksManagerService } from "../service/booksManager.service.js";
+import { booksManagerModel } from "../DAO/models/booksManager.model.js";
 
 class UserController {
   async register(req, res) {
@@ -355,7 +357,7 @@ class UserController {
         return res.status(400).send('El token ha expirado. El usuario ha sido eliminado.');
       }
 
-      await userModel.updateOne({_id: user._id, verified: true});
+      await userModel.updateOne({_id: user._id}, {verified: true});
       userLogger.debug(`Usuario con id: ${user._id} verificado`);
 
       setTimeout(async () => {
@@ -426,27 +428,31 @@ class UserController {
 
   async delete(req, res){
     const {uid} = req.params;
-    
-    userService.delete(uid)
-    .then((data) => {
-      userLogger.debug(`Se eleminó el usuario con el ID: ${data._id}`)
-      return res.status(201).json({
-        status: "success",
-        message: "Usuario eliminado con exito",
-        valid: true,
-        payload: data
+    booksManagerModel.deleteMany({owner: uid})
+    .then((res) => {
+      userLogger.info()
+      userService.delete(uid)
+      .then((data) => {
+        userLogger.debug(`Se eleminó el usuario con el ID: ${data._id}`)
+        return res.status(201).json({
+          status: "success",
+          message: "Usuario eliminado con exito",
+          valid: true,
+          payload: data
+        });
+      })
+      .catch((err) => {
+        userLogger.error(`Error en la petición delete del usuario con el ID: ${uid}`);
+        userLogger.error(err);
+        return res.status(500).json({
+          status: "error",
+          message: "Hubo un problema a la hora de actualizar el usuario",
+          error: err,
+          valid: false
+        });
       });
     })
-    .catch((err) => {
-      userLogger.error(`Error en la petición delete del usuario con el ID: ${uid}`);
-      userLogger.error(err);
-      return res.status(500).json({
-        status: "error",
-        message: "Hubo un problema a la hora de actualizar el usuario",
-        error: err,
-        valid: false
-      });
-    });
+    
   }
 }
 
