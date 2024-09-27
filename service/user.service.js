@@ -39,7 +39,7 @@ class UserService{
             const put = await userModel.findByIdAndUpdate(uid, data);
             return put;
         } catch (error){
-            userLogger(error);
+            userLogger.error(error);
             return error;
         }
     }

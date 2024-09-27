@@ -30,13 +30,16 @@ class UserController {
 
     const existEmail = await userModel.findOne({ email: email });
     if (existEmail) {
-      userLogger.error("Ya existe un usuario con este mail");
+      userLogger.warn(`Usuario con el mail: ${email}, intentó registrarse pero ya existe una cuenta asociada`);
       return res.status(412).json({
         status: "error",
         message: "Ya existe un usuario con este mail",
         valid: false,
       });
     }
+
+    const role = email.includes("alumno") ? "alumno" : "profesor";
+    
     const hashedPassword = await hashPassword(password);
     const newUser = await userModel.create({
       firstName,
@@ -45,6 +48,7 @@ class UserController {
       phone,
       password: hashedPassword,
       email,
+      role,
       verificationExpires: Date.now() + 3600000 // 1 hora
     });
     if (!newUser) {
@@ -56,7 +60,7 @@ class UserController {
       });
     }
 
-    userLogger.info(`Se creó el usuario con el ID: ${newUser._id}`);
+    userLogger.info(`Se creó un usuario con el ID: ${newUser._id}`);
 
     const emailToken = await emailTokenModel.create({
       userId: newUser._id,
@@ -76,7 +80,7 @@ class UserController {
     });
     return res.status(200).json({
       status: "success",
-      message: "Se envió un correo de verificación de Email",
+      message: `Se envió un correo a ${newUser.email} de verificación de Email`,
       payload: mail,
       valid: true,
     });
@@ -86,7 +90,6 @@ class UserController {
     const { email, password } = req.body;
     const user = await userModel.findOne({ email });
     if (!user) {
-      userLogger.error(`El usuario con el email: ${email} no existe`);
       return res.status(404).json({
         status: "error",
         message: `El ususuario con el Email: ${email} no existe`,
@@ -98,7 +101,6 @@ class UserController {
 
     const match = await comparePassword(password, user.password);
     if (!match) {
-      userLogger.error(`Contraseña incorrecta, intente de nuevo`);
       return res.status(400).json({
         status: "error",
         message: `Contraseña incorrecta, por favor intente de nuevo`,
@@ -141,7 +143,6 @@ class UserController {
           userLogger.error(err);
           throw err;
         }
-        userLogger.info("Sesión todavia abierta, puede continuar");
         return res.status(200).json({
           status: "success",
           message: "Sesión todavia abierta, puede continuar",
@@ -150,7 +151,6 @@ class UserController {
         });
       });
     } else {
-      userLogger.warn("El Usuario no ha iniciado sesión, por favor inicie sesión");
       return res.json({
         status: "error",
         message: "El Usuario no ha iniciado sesión, por favor inicie sesión",
@@ -163,14 +163,12 @@ class UserController {
     const { token } = req.cookies;
 
     if (!token) {
-      userLogger.error("El Usuario intentó cerrar sesión sin un Token de sesión");
       return res.status(401).json({
         status: "error",
         message: "El Usuario intentó cerrar sesión sin un Token de sesión",
         valid: false,
       });
     }
-    userLogger.info("El Token del Usuario fue elminado con éxito");
     return res.status(200).cookie("token", "", { maxAge: 1 }).json({
       status: "success",
       message: "El Token del Usuario fue elminado con éxito",
@@ -196,10 +194,10 @@ class UserController {
         text: "Porfavor, entregue su libro o renueve el tiempo",
       })
       .then((response) => {
-        userLogger.info(`Se ha enviado un Email a: ${user.email} correctamente`);
+        userLogger.info(`Se ha enviado un Email a: ${user.email} para notificarlo`);
         return res.status(200).json({
           status: "success",
-          message: `Se ha enviado un Email a: ${user.email} correctamente`,
+          message: `Se ha enviado un Email a: ${user.email} para notificarlo`,
           valid: true,
           payload: { response },
         });
@@ -217,45 +215,62 @@ class UserController {
   async recoverPass(req, res) {
     const code = crypto.randomBytes(32).toString("hex");
     const { email } = req.body;
-    const createdRecoverCodes = await RecoverCodesMongoose.create({
-      email,
-      code,
-      expire: Date.now() + 10 * 60 * 1000,
-    });
-    try{
-      const result = await sendMailTransport.sendMail({
-        from: config.googleUser,
-        to: email,
-        subject: "Recuperar tu contraseña",
-        html: `
-            <div>
-                <a href="${config.apiUrl}/recover-pass?code=${code}&email=${email}">Codigo para recuperar tu contraseña: </a>${code}
-            </div>
-        `,
-      });
-      return res.status(200).json({
-        status: "success",
-        message: `Email mandado a: ${email} con éxito`,
-        valid: true,
-        payload: { result },
-      });
-    }
-    catch(err){
-      return res.status(502).json({
+    await userModel.findOne({email: email})
+    .then((data) => {
+      if(data== null){
+        return res.status(400).json({
+          status: "error",
+          message: "El mail no tiene una cuenta asociada"
+        })
+      }
+      else {
+        RecoverCodesMongoose.create({
+          email,
+          code,
+          expire: Date.now() + 10 * 60 * 1000,
+        })
+        .then(() => {
+          const result = sendMailTransport.sendMail({
+            from: config.googleUser,
+            to: email,
+            subject: "Recuperar tu contraseña",
+            html: `
+                <div>
+                    <a href="${config.apiUrl}/recover-pass?code=${code}&email=${email}">Codigo para recuperar tu contraseña: </a>${code}
+                </div>
+            `,
+          });
+          return res.status(200).json({
+            status: "success",
+            message: `Email mandado a: ${email} con éxito`,
+            valid: true,
+            payload: { result },
+          });
+        })
+        .catch((err) => {
+          userLogger.error(err)
+          return res.status(502).json({
+            status: "error",
+            message: `Ha ocurrido un error al intentar mandar un Email a ${user.email}: ${err}`,
+            valid: false,
+          });
+        })
+      }
+    })
+    .catch((err) => {
+      userLogger.error(err);
+      return res.status(500).json({
         status: "error",
-        message: `Ha ocurrido un error al intentar mandar un Email a ${user.email}: ${err}`,
-        valid: false,
-      });
-    }
+        message: `Hubo un error con el servidor al buscar el usuario con el mail: ${email}`,
+        error: err
+      })
+    })
   }
 
   async getMail(req, res) {
     const { code, email } = req.body;
     
-    const foundRecoverCode = await RecoverCodesMongoose.findOne({
-      email,
-      code,
-    });
+    const foundRecoverCode = await RecoverCodesMongoose.findOne({email, code});
     
     if (Date.now() < foundRecoverCode.expire) {
       return res.status(200).json({
@@ -264,7 +279,7 @@ class UserController {
         valid: true,
       })
     } else {
-      userLogger.error(`El codigo de recuperacion del usuario: ${email} está vencido`);
+      userLogger.warn(`El codigo de recuperacion del usuario: ${email} está vencido`);
       return res
         .status(401)
         .render("error", {
@@ -278,21 +293,17 @@ class UserController {
 
   async changePass(req, res) {
     const { password, email, code } = req.body;
-    const foundRecoverCode = await RecoverCodesMongoose.findOne({
-      email,
-      code,
-    });
+    const foundRecoverCode = await RecoverCodesMongoose.findOne({email, code });
 
-    if(!foundRecoverCode) return res.status(404).send({message: "El usuario no existe"});
+    if(!foundRecoverCode) return res.status(404).send({message: "El Email ingresado no coincide con el registrado"});
 
     if (Date.now() < foundRecoverCode.expire) {
       const checkUser = await userModel.findOne({ email: email });
       
       if (await compare(password, checkUser.password)) {
-        userLogger.error(`La contraseña para el usuario: ${email} nueva es la misma que la anterior, porfavor cambiela`);
         return res
           .status(401)
-          .render("error", {
+          .json({
             status: "error",
             title: "Misma contraseña",
             message:
@@ -309,7 +320,6 @@ class UserController {
             code
           });
         },1000);
-        userLogger.debug(`Petición de cambiar contraseña para el usuario ${email} borrada.`);
         return res.status(200).json({
           status: "success",
           message: `Se cambió la contraseña del usuario ${email} con éxito`,
@@ -317,7 +327,6 @@ class UserController {
         });
       }
     } else {
-      userLogger.error(`El codigo de recuperacion del usuario: ${gmail} está vencido`);
       return res
         .status(401)
         .render("error", {
@@ -365,6 +374,7 @@ class UserController {
       
     } catch (error){
       userLogger.error(`Hubo un error a la hora de verificar el usuario con el id: ${req.params.id}`);
+      userLogger.error(error)
       return res.status(500).send({message: "Internal Server Error"});
     }
   }
@@ -384,6 +394,7 @@ class UserController {
       });
     })
     .catch((err) => {
+      userLogger.error(`Error al traer el usuario con el ID: ${uid}`);
       userLogger.error(err);
       return res.status(500).send("Error con el servidor para traer el usuario");
     });
@@ -402,6 +413,8 @@ class UserController {
       });
     })
     .catch((err) => {
+      userLogger.error(`Error en petición put para usuario con el ID: ${uid}`)
+      userLogger.error(err)
       return res.status(500).json({
         status: "error",
         message: "Hubo un problema a la hora de actualizar el usuario",
@@ -425,6 +438,8 @@ class UserController {
       });
     })
     .catch((err) => {
+      userLogger.error(`Error en la petición delete del usuario con el ID: ${uid}`);
+      userLogger.error(err);
       return res.status(500).json({
         status: "error",
         message: "Hubo un problema a la hora de actualizar el usuario",

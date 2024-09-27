@@ -6,7 +6,6 @@ class BookController {
     const books = await bookService.get();
     if(!books)
     {
-      bookLogger.error("Hubo un error a la hora de traer los libros");
       return res.status(502).json({
         status: "error",
         message: "Hubo un error a la hora de traer los libros",
@@ -38,7 +37,6 @@ class BookController {
     const book = bookService.getById(bid);
     if (!book)
     {
-      bookLogger.error("No se ha podido traer el libro correctamente")
       return res.status(502).json({
       status: "error",
       message: "No se ha podido traer el libro correctamente",
